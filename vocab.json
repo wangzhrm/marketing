@@ -1,0 +1,2226 @@
+{
+  "Lecture1": [
+    {
+      "word": "Marketing",
+      "chinese_meaning": "营销"
+    },
+    {
+      "word": "Utility",
+      "chinese_meaning": "效用"
+    },
+    {
+      "word": "Form Utility",
+      "chinese_meaning": "形态效用"
+    },
+    {
+      "word": "Time Utility",
+      "chinese_meaning": "时间效用"
+    },
+    {
+      "word": "Place Utility",
+      "chinese_meaning": "地点效用"
+    },
+    {
+      "word": "Ownership Utility",
+      "chinese_meaning": "所有权效用"
+    },
+    {
+      "word": "Target Market",
+      "chinese_meaning": "目标市场"
+    },
+    {
+      "word": "Marketing Mix",
+      "chinese_meaning": "营销组合"
+    },
+    {
+      "word": "Product",
+      "chinese_meaning": "产品"
+    },
+    {
+      "word": "Price",
+      "chinese_meaning": "价格"
+    },
+    {
+      "word": "Distribution (Place)",
+      "chinese_meaning": "分销 (地点)"
+    },
+    {
+      "word": "Promotion",
+      "chinese_meaning": "促销"
+    },
+    {
+      "word": "Integrated Marketing Communications (IMC)",
+      "chinese_meaning": "整合营销传播"
+    },
+    {
+      "word": "Production Orientation",
+      "chinese_meaning": "生产导向"
+    },
+    {
+      "word": "Sales Orientation",
+      "chinese_meaning": "销售导向"
+    },
+    {
+      "word": "Consumer Orientation",
+      "chinese_meaning": "消费者导向"
+    },
+    {
+      "word": "Seller’s Market",
+      "chinese_meaning": "卖方市场"
+    },
+    {
+      "word": "Buyer’s Market",
+      "chinese_meaning": "买方市场"
+    },
+    {
+      "word": "Relationship Marketing",
+      "chinese_meaning": "关系营销"
+    },
+    {
+      "word": "Social Marketing",
+      "chinese_meaning": "社交营销"
+    },
+    {
+      "word": "Mobile Marketing",
+      "chinese_meaning": "移动营销"
+    },
+    {
+      "word": "Interactive Marketing",
+      "chinese_meaning": "互动营销"
+    },
+    {
+      "word": "Strategic Alliances",
+      "chinese_meaning": "战略联盟"
+    },
+    {
+      "word": "Product Marketing",
+      "chinese_meaning": "产品营销"
+    },
+    {
+      "word": "Person Marketing",
+      "chinese_meaning": "个人营销"
+    },
+    {
+      "word": "Place Marketing",
+      "chinese_meaning": "地点营销"
+    },
+    {
+      "word": "Cause Marketing",
+      "chinese_meaning": "事业营销"
+    },
+    {
+      "word": "Event Marketing",
+      "chinese_meaning": "活动营销"
+    },
+    {
+      "word": "Organization Marketing",
+      "chinese_meaning": "组织营销"
+    },
+    {
+      "word": "Transporting",
+      "chinese_meaning": "运输"
+    },
+    {
+      "word": "Storing",
+      "chinese_meaning": "存储"
+    },
+    {
+      "word": "Standardizing and Grading",
+      "chinese_meaning": "标准化与分级"
+    },
+    {
+      "word": "Financing",
+      "chinese_meaning": "融资"
+    },
+    {
+      "word": "Risk Taking",
+      "chinese_meaning": "风险承担"
+    }
+  ],
+  "Lecture2": [
+    {
+      "word": "Planning",
+      "chinese_meaning": "规划"
+    },
+    {
+      "word": "Marketing Planning",
+      "chinese_meaning": "营销规划"
+    },
+    {
+      "word": "Strategic Planning",
+      "chinese_meaning": "战略规划"
+    },
+    {
+      "word": "Tactical Planning",
+      "chinese_meaning": "战术规划"
+    },
+    {
+      "word": "Operational Planning",
+      "chinese_meaning": "运营规划"
+    },
+    {
+      "word": "Marketing Plan",
+      "chinese_meaning": "营销计划"
+    },
+    {
+      "word": "Mission",
+      "chinese_meaning": "使命"
+    },
+    {
+      "word": "Marketing Strategy",
+      "chinese_meaning": "营销策略"
+    },
+    {
+      "word": "Porter's Five Forces",
+      "chinese_meaning": "波特五力模型"
+    },
+    {
+      "word": "Threat of New Competitors",
+      "chinese_meaning": "新竞争者威胁"
+    },
+    {
+      "word": "Supplier Power",
+      "chinese_meaning": "供应商力量"
+    },
+    {
+      "word": "Buyer Power",
+      "chinese_meaning": "买方力量"
+    },
+    {
+      "word": "Threat of Substitutes",
+      "chinese_meaning": "替代品威胁"
+    },
+    {
+      "word": "Competitive Rivalry",
+      "chinese_meaning": "竞争对抗"
+    },
+    {
+      "word": "SWOT Analysis",
+      "chinese_meaning": "SWOT分析"
+    },
+    {
+      "word": "Strengths",
+      "chinese_meaning": "优势"
+    },
+    {
+      "word": "Weaknesses",
+      "chinese_meaning": "劣势"
+    },
+    {
+      "word": "Opportunities",
+      "chinese_meaning": "机会"
+    },
+    {
+      "word": "Threats",
+      "chinese_meaning": "威胁"
+    },
+    {
+      "word": "Strategic Business Units (SBUs)",
+      "chinese_meaning": "战略业务单元"
+    },
+    {
+      "word": "Portfolio Analysis",
+      "chinese_meaning": "组合分析"
+    },
+    {
+      "word": "BCG Matrix",
+      "chinese_meaning": "BCG矩阵"
+    },
+    {
+      "word": "Relative Market Share",
+      "chinese_meaning": "相对市场份额"
+    },
+    {
+      "word": "Industry Growth Rate",
+      "chinese_meaning": "行业增长率"
+    },
+    {
+      "word": "Stars",
+      "chinese_meaning": "明星产品"
+    },
+    {
+      "word": "Cash Cows",
+      "chinese_meaning": "现金牛产品"
+    },
+    {
+      "word": "Question Marks",
+      "chinese_meaning": "问题产品"
+    },
+    {
+      "word": "Dogs",
+      "chinese_meaning": "狗类产品"
+    }
+  ],
+  "Lecture3": [
+    {
+      "word": "Marketing Environment",
+      "chinese_meaning": "营销环境"
+    },
+    {
+      "word": "Competitive Environment",
+      "chinese_meaning": "竞争环境"
+    },
+    {
+      "word": "Direct Competition",
+      "chinese_meaning": "直接竞争"
+    },
+    {
+      "word": "Indirect Competition",
+      "chinese_meaning": "间接竞争"
+    },
+    {
+      "word": "Competitive Strategy",
+      "chinese_meaning": "竞争策略"
+    },
+    {
+      "word": "Political/Legal/Regulatory Environment",
+      "chinese_meaning": "政治/法律/监管环境"
+    },
+    {
+      "word": "Antitrust Laws",
+      "chinese_meaning": "反垄断法"
+    },
+    {
+      "word": "Economic Environment",
+      "chinese_meaning": "经济环境"
+    },
+    {
+      "word": "Gross Domestic Product (GDP)",
+      "chinese_meaning": "国内生产总值"
+    },
+    {
+      "word": "Recession",
+      "chinese_meaning": "经济衰退"
+    },
+    {
+      "word": "Prosperity",
+      "chinese_meaning": "经济繁荣"
+    },
+    {
+      "word": "Economic Slowdowns",
+      "chinese_meaning": "经济放缓"
+    },
+    {
+      "word": "Inflation",
+      "chinese_meaning": "通货膨胀"
+    },
+    {
+      "word": "Deflation",
+      "chinese_meaning": "通货紧缩"
+    },
+    {
+      "word": "Unemployment",
+      "chinese_meaning": "失业"
+    },
+    {
+      "word": "Discretionary Income",
+      "chinese_meaning": "可支配收入"
+    },
+    {
+      "word": "Technological Environment",
+      "chinese_meaning": "技术环境"
+    },
+    {
+      "word": "Social-Cultural Environment",
+      "chinese_meaning": "社会文化环境"
+    },
+    {
+      "word": "Consumerism",
+      "chinese_meaning": "消费者主义"
+    },
+    {
+      "word": "Marketing Ethics",
+      "chinese_meaning": "营销伦理"
+    },
+    {
+      "word": "Social Responsibility",
+      "chinese_meaning": "社会责任"
+    }
+  ],
+  "Lecture4": [
+    {
+      "word": "E-Business",
+      "chinese_meaning": "电子商务公司"
+    },
+    {
+      "word": "E-Commerce",
+      "chinese_meaning": "网上商务"
+    },
+    {
+      "word": "Digital Marketing",
+      "chinese_meaning": "数字营销"
+    },
+    {
+      "word": "Interactive Marketing",
+      "chinese_meaning": "互动营销"
+    },
+    {
+      "word": "Global Reach",
+      "chinese_meaning": "全球覆盖"
+    },
+    {
+      "word": "Personalization",
+      "chinese_meaning": "个性化"
+    },
+    {
+      "word": "Right-Time Marketing",
+      "chinese_meaning": "适时营销"
+    },
+    {
+      "word": "Integrated Marketing",
+      "chinese_meaning": "整合营销"
+    },
+    {
+      "word": "Business-to-Business (B2B)",
+      "chinese_meaning": "企业对企业"
+    },
+    {
+      "word": "Electronic Data Interchange (EDI)",
+      "chinese_meaning": "电子数据交换"
+    },
+    {
+      "word": "Extranets",
+      "chinese_meaning": "外部网络"
+    },
+    {
+      "word": "Intranets",
+      "chinese_meaning": "内部网络"
+    },
+    {
+      "word": "Private Exchanges",
+      "chinese_meaning": "私人交易平台"
+    },
+    {
+      "word": "Business-to-Consumer (B2C)",
+      "chinese_meaning": "企业对消费者"
+    },
+    {
+      "word": "Competitive Pricing",
+      "chinese_meaning": "竞争性定价"
+    },
+    {
+      "word": "Access and Convenience",
+      "chinese_meaning": "访问与便利"
+    },
+    {
+      "word": "Personalized Service",
+      "chinese_meaning": "个性化服务"
+    },
+    {
+      "word": "Encryption",
+      "chinese_meaning": "加密"
+    },
+    {
+      "word": "Transport Layer Security (TLS)",
+      "chinese_meaning": "传输层安全"
+    },
+    {
+      "word": "Bots",
+      "chinese_meaning": "机器人"
+    },
+    {
+      "word": "Privacy Issues",
+      "chinese_meaning": "隐私问题"
+    },
+    {
+      "word": "Phishing",
+      "chinese_meaning": "网络钓鱼"
+    },
+    {
+      "word": "Payment Fraud",
+      "chinese_meaning": "支付欺诈"
+    },
+    {
+      "word": "Chargeback Fraud",
+      "chinese_meaning": "退单欺诈"
+    },
+    {
+      "word": "Channel Conflicts",
+      "chinese_meaning": "渠道冲突"
+    },
+    {
+      "word": "User Experience (UX)",
+      "chinese_meaning": "用户体验"
+    },
+    {
+      "word": "Product Offering",
+      "chinese_meaning": "产品提供"
+    },
+    {
+      "word": "Checkout Process",
+      "chinese_meaning": "结账流程"
+    },
+    {
+      "word": "Revenue Maximization",
+      "chinese_meaning": "收入最大化"
+    },
+    {
+      "word": "Unique Visitors",
+      "chinese_meaning": "独立访客"
+    },
+    {
+      "word": "Engagement",
+      "chinese_meaning": "参与度"
+    },
+    {
+      "word": "Conversion Rate",
+      "chinese_meaning": "转化率"
+    },
+    {
+      "word": "Click-Through Rate (CTR)",
+      "chinese_meaning": "点击率"
+    },
+    {
+      "word": "Conversion Cost",
+      "chinese_meaning": "转化成本"
+    },
+    {
+      "word": "Cost-Per-Click (CPC)",
+      "chinese_meaning": "每次点击成本"
+    }
+  ],
+  "Lecture5": [
+    {
+      "word": "Social Media",
+      "chinese_meaning": "社交媒体"
+    },
+    {
+      "word": "Micro-Influencers",
+      "chinese_meaning": "微型影响者"
+    },
+    {
+      "word": "Social Media Platforms",
+      "chinese_meaning": "社交媒体平台"
+    },
+    {
+      "word": "Social Networking Sites",
+      "chinese_meaning": "社交网络站点"
+    },
+    {
+      "word": "Social Bookmarking Sites",
+      "chinese_meaning": "社交书签站点"
+    },
+    {
+      "word": "Blogging Sites",
+      "chinese_meaning": "博客站点"
+    },
+    {
+      "word": "Promoted Post",
+      "chinese_meaning": "推广帖子"
+    },
+    {
+      "word": "Graphic Interchange Format (GIF)",
+      "chinese_meaning": "图形交换格式"
+    },
+    {
+      "word": "Social Media Marketing",
+      "chinese_meaning": "社交媒体营销"
+    },
+    {
+      "word": "Native Advertising",
+      "chinese_meaning": "原生广告"
+    },
+    {
+      "word": "Brand Awareness",
+      "chinese_meaning": "品牌知名度"
+    },
+    {
+      "word": "Generate Leads",
+      "chinese_meaning": "产生潜在客户"
+    },
+    {
+      "word": "Content Marketing",
+      "chinese_meaning": "内容营销"
+    },
+    {
+      "word": "Measures of Activity",
+      "chinese_meaning": "活动度量"
+    },
+    {
+      "word": "Measures of Engagement",
+      "chinese_meaning": "参与度量"
+    },
+    {
+      "word": "Measures of Conversion",
+      "chinese_meaning": "转化度量"
+    }
+  ],
+  "Lecture6": [
+    {
+      "word": "Consumer Behavior",
+      "chinese_meaning": "消费者行为"
+    },
+    {
+      "word": "Social Factors",
+      "chinese_meaning": "社会因素"
+    },
+    {
+      "word": "Psychological Factors",
+      "chinese_meaning": "心理因素"
+    },
+    {
+      "word": "Situational Factors",
+      "chinese_meaning": "情境因素"
+    },
+    {
+      "word": "Consumer Decision Process",
+      "chinese_meaning": "消费者决策过程"
+    },
+    {
+      "word": "Problem or Opportunity Recognition",
+      "chinese_meaning": "问题或机会识别"
+    },
+    {
+      "word": "Information Search",
+      "chinese_meaning": "信息搜索"
+    },
+    {
+      "word": "Internal Sources",
+      "chinese_meaning": "内部来源"
+    },
+    {
+      "word": "External Sources",
+      "chinese_meaning": "外部来源"
+    },
+    {
+      "word": "Evoked Set",
+      "chinese_meaning": "唤起集"
+    },
+    {
+      "word": "Evaluative Criteria",
+      "chinese_meaning": "评价标准"
+    },
+    {
+      "word": "Purchase Decision",
+      "chinese_meaning": "购买决策"
+    },
+    {
+      "word": "Purchase Act",
+      "chinese_meaning": "购买行为"
+    },
+    {
+      "word": "Post-purchase Evaluation",
+      "chinese_meaning": "购买后评价"
+    },
+    {
+      "word": "Cognitive Dissonance",
+      "chinese_meaning": "认知失调"
+    },
+    {
+      "word": "Involvement",
+      "chinese_meaning": "参与度"
+    },
+    {
+      "word": "Routinized Response Behavior",
+      "chinese_meaning": "常规反应行为"
+    },
+    {
+      "word": "Limited Problem Solving",
+      "chinese_meaning": "有限问题解决"
+    },
+    {
+      "word": "Extended Problem Solving",
+      "chinese_meaning": "扩展问题解决"
+    },
+    {
+      "word": "Culture",
+      "chinese_meaning": "文化"
+    },
+    {
+      "word": "Subculture",
+      "chinese_meaning": "亚文化"
+    },
+    {
+      "word": "Social Class",
+      "chinese_meaning": "社会阶层"
+    },
+    {
+      "word": "Reference Groups",
+      "chinese_meaning": "参考群体"
+    },
+    {
+      "word": "Opinion Leaders",
+      "chinese_meaning": "意见领袖"
+    },
+    {
+      "word": "Needs",
+      "chinese_meaning": "需求"
+    },
+    {
+      "word": "Motives",
+      "chinese_meaning": "动机"
+    },
+    {
+      "word": "Maslow's Hierarchy of Needs",
+      "chinese_meaning": "马斯洛需求层次"
+    },
+    {
+      "word": "Physiological Needs",
+      "chinese_meaning": "生理需求"
+    },
+    {
+      "word": "Safety Needs",
+      "chinese_meaning": "安全需求"
+    },
+    {
+      "word": "Belongingness Needs",
+      "chinese_meaning": "归属需求"
+    },
+    {
+      "word": "Esteem Needs",
+      "chinese_meaning": "尊重需求"
+    },
+    {
+      "word": "Self-actualization Needs",
+      "chinese_meaning": "自我实现需求"
+    },
+    {
+      "word": "Perception",
+      "chinese_meaning": "感知"
+    },
+    {
+      "word": "Attitudes",
+      "chinese_meaning": "态度"
+    },
+    {
+      "word": "Learning",
+      "chinese_meaning": "学习"
+    },
+    {
+      "word": "Self-Concept",
+      "chinese_meaning": "自我概念"
+    },
+    {
+      "word": "Real Self",
+      "chinese_meaning": "真实自我"
+    },
+    {
+      "word": "Self-Image",
+      "chinese_meaning": "自我形象"
+    },
+    {
+      "word": "Looking-Glass Self",
+      "chinese_meaning": "镜中自我"
+    },
+    {
+      "word": "Ideal Self",
+      "chinese_meaning": "理想自我"
+    },
+    {
+      "word": "Physical Surroundings",
+      "chinese_meaning": "物理环境"
+    },
+    {
+      "word": "Social Surroundings",
+      "chinese_meaning": "社会环境"
+    },
+    {
+      "word": "Buyer's Mood and Condition",
+      "chinese_meaning": "买方情绪与状态"
+    }
+  ],
+  "Lecture7": [
+    {
+      "word": "Business Market",
+      "chinese_meaning": "商业市场"
+    },
+    {
+      "word": "Consumer Market",
+      "chinese_meaning": "消费者市场"
+    },
+    {
+      "word": "New Buy",
+      "chinese_meaning": "新购"
+    },
+    {
+      "word": "Straight Rebuy",
+      "chinese_meaning": "直接重购"
+    },
+    {
+      "word": "Modified Rebuy",
+      "chinese_meaning": "修改重购"
+    },
+    {
+      "word": "Derived Demand",
+      "chinese_meaning": "衍生需求"
+    },
+    {
+      "word": "Joint Demand",
+      "chinese_meaning": "联合需求"
+    },
+    {
+      "word": "Geographic Market Concentration",
+      "chinese_meaning": "地理市场集中"
+    },
+    {
+      "word": "Purchase Decision Process",
+      "chinese_meaning": "购买决策过程"
+    },
+    {
+      "word": "Producer Markets",
+      "chinese_meaning": "生产者市场"
+    },
+    {
+      "word": "Reseller Markets",
+      "chinese_meaning": "分销商市场"
+    },
+    {
+      "word": "Government Markets",
+      "chinese_meaning": "政府市场"
+    },
+    {
+      "word": "Institutional Markets",
+      "chinese_meaning": "机构市场"
+    },
+    {
+      "word": "Demographic Characteristics",
+      "chinese_meaning": "人口统计特征"
+    },
+    {
+      "word": "Customer-Based Segmentation",
+      "chinese_meaning": "客户基础细分"
+    },
+    {
+      "word": "End-Use Application",
+      "chinese_meaning": "最终用途应用"
+    },
+    {
+      "word": "Business Purchasing",
+      "chinese_meaning": "商业采购"
+    },
+    {
+      "word": "Environmental Factors",
+      "chinese_meaning": "环境因素"
+    },
+    {
+      "word": "Organizational Factors",
+      "chinese_meaning": "组织因素"
+    },
+    {
+      "word": "Interpersonal Influences",
+      "chinese_meaning": "人际影响"
+    },
+    {
+      "word": "Organizational Buying Process",
+      "chinese_meaning": "组织购买过程"
+    },
+    {
+      "word": "Buying Center",
+      "chinese_meaning": "购买中心"
+    },
+    {
+      "word": "Users",
+      "chinese_meaning": "使用者"
+    },
+    {
+      "word": "Influencers",
+      "chinese_meaning": "影响者"
+    },
+    {
+      "word": "Gatekeepers",
+      "chinese_meaning": "看门人"
+    },
+    {
+      "word": "Buyers",
+      "chinese_meaning": "购买者"
+    },
+    {
+      "word": "Deciders",
+      "chinese_meaning": "决策者"
+    }
+  ],
+  "Lecture8": [
+    {
+      "word": "Global Marketing",
+      "chinese_meaning": "全球营销"
+    },
+    {
+      "word": "Exporting",
+      "chinese_meaning": "出口"
+    },
+    {
+      "word": "Importing",
+      "chinese_meaning": "进口"
+    },
+    {
+      "word": "Tariffs",
+      "chinese_meaning": "关税"
+    },
+    {
+      "word": "Free-Trade Area",
+      "chinese_meaning": "自由贸易区"
+    },
+    {
+      "word": "World Trade Organization (WTO)",
+      "chinese_meaning": "世界贸易组织"
+    },
+    {
+      "word": "European Union (EU)",
+      "chinese_meaning": "欧盟"
+    },
+    {
+      "word": "Economic Environment",
+      "chinese_meaning": "经济环境"
+    },
+    {
+      "word": "Political and Legal Environment",
+      "chinese_meaning": "政治与法律环境"
+    },
+    {
+      "word": "Sociocultural Environment",
+      "chinese_meaning": "社会文化环境"
+    },
+    {
+      "word": "Technological Environment",
+      "chinese_meaning": "技术环境"
+    },
+    {
+      "word": "Competitive Environment",
+      "chinese_meaning": "竞争环境"
+    },
+    {
+      "word": "Franchising",
+      "chinese_meaning": "特许经营"
+    },
+    {
+      "word": "Foreign Licensing",
+      "chinese_meaning": "外国许可"
+    },
+    {
+      "word": "Subcontracting",
+      "chinese_meaning": "分包"
+    },
+    {
+      "word": "International Direct Investment",
+      "chinese_meaning": "国际直接投资"
+    },
+    {
+      "word": "Acquisitions",
+      "chinese_meaning": "收购"
+    },
+    {
+      "word": "Joint Ventures",
+      "chinese_meaning": "合资企业"
+    },
+    {
+      "word": "Straight Extension",
+      "chinese_meaning": "直接扩展"
+    },
+    {
+      "word": "Promotion Adaptation",
+      "chinese_meaning": "促销适应"
+    },
+    {
+      "word": "Product Adaptation",
+      "chinese_meaning": "产品适应"
+    },
+    {
+      "word": "Dual Adaptation",
+      "chinese_meaning": "双重适应"
+    },
+    {
+      "word": "Product Invention",
+      "chinese_meaning": "产品创新"
+    }
+  ],
+  "Lecture9": [
+    {
+      "word": "Consumer Products",
+      "chinese_meaning": "消费品"
+    },
+    {
+      "word": "Business Products",
+      "chinese_meaning": "商业产品"
+    },
+    {
+      "word": "Target Market",
+      "chinese_meaning": "目标市场"
+    },
+    {
+      "word": "Market Segmentation",
+      "chinese_meaning": "市场细分"
+    },
+    {
+      "word": "Geographic Segmentation",
+      "chinese_meaning": "地理细分"
+    },
+    {
+      "word": "Market Size",
+      "chinese_meaning": "市场规模"
+    },
+    {
+      "word": "Market Density",
+      "chinese_meaning": "市场密度"
+    },
+    {
+      "word": "Demographic Segmentation",
+      "chinese_meaning": "人口统计细分"
+    },
+    {
+      "word": "Family Life Cycle",
+      "chinese_meaning": "家庭生命周期"
+    },
+    {
+      "word": "Psychographic Segmentation",
+      "chinese_meaning": "心理细分"
+    },
+    {
+      "word": "Personality",
+      "chinese_meaning": "个性"
+    },
+    {
+      "word": "Values",
+      "chinese_meaning": "价值观"
+    },
+    {
+      "word": "Lifestyle",
+      "chinese_meaning": "生活方式"
+    },
+    {
+      "word": "Behavioral Segmentation",
+      "chinese_meaning": "行为细分"
+    },
+    {
+      "word": "Benefits Sought",
+      "chinese_meaning": "寻求的利益"
+    },
+    {
+      "word": "Usage Rate",
+      "chinese_meaning": "使用率"
+    },
+    {
+      "word": "Brand Loyalty",
+      "chinese_meaning": "品牌忠诚度"
+    },
+    {
+      "word": "Undifferentiated Marketing",
+      "chinese_meaning": "无差异营销"
+    },
+    {
+      "word": "Mass Marketing",
+      "chinese_meaning": "大众营销"
+    },
+    {
+      "word": "Differentiated Marketing",
+      "chinese_meaning": "差异化营销"
+    },
+    {
+      "word": "Concentrated Marketing",
+      "chinese_meaning": "集中营销"
+    },
+    {
+      "word": "Niche Marketing",
+      "chinese_meaning": "利基营销"
+    },
+    {
+      "word": "Positioning",
+      "chinese_meaning": "定位"
+    },
+    {
+      "word": "Value Proposition",
+      "chinese_meaning": "价值主张"
+    },
+    {
+      "word": "Positioning Map",
+      "chinese_meaning": "定位图"
+    },
+    {
+      "word": "Product Attributes",
+      "chinese_meaning": "产品属性"
+    },
+    {
+      "word": "Competitive Positioning",
+      "chinese_meaning": "竞争定位"
+    },
+    {
+      "word": "Product Use or Application",
+      "chinese_meaning": "产品使用或应用"
+    }
+  ],
+  "Lecture10": [
+    {
+      "word": "Marketing research",
+      "chinese_meaning": "营销调研"
+    },
+    {
+      "word": "The Marketing Research Process",
+      "chinese_meaning": "营销调研过程"
+    },
+    {
+      "word": "Define the Problem",
+      "chinese_meaning": "界定问题"
+    },
+    {
+      "word": "Exploratory research",
+      "chinese_meaning": "探索性研究"
+    },
+    {
+      "word": "Formulate a Hypothesis",
+      "chinese_meaning": "形成假设"
+    },
+    {
+      "word": "Hypothesis",
+      "chinese_meaning": "假设"
+    },
+    {
+      "word": "Research design",
+      "chinese_meaning": "研究设计"
+    },
+    {
+      "word": "Primary data",
+      "chinese_meaning": "原始数据 (第一手数据)"
+    },
+    {
+      "word": "Secondary data",
+      "chinese_meaning": "二手数据"
+    },
+    {
+      "word": "Interpret and Present Research Data",
+      "chinese_meaning": "解释和呈现研究数据"
+    },
+    {
+      "word": "Internal Data",
+      "chinese_meaning": "内部数据"
+    },
+    {
+      "word": "Government Data",
+      "chinese_meaning": "政府数据"
+    },
+    {
+      "word": "Industry Publications",
+      "chinese_meaning": "行业出版物"
+    },
+    {
+      "word": "Research Services",
+      "chinese_meaning": "调研服务"
+    },
+    {
+      "word": "Observation",
+      "chinese_meaning": "观察"
+    },
+    {
+      "word": "Interpretive research",
+      "chinese_meaning": "解释性研究"
+    },
+    {
+      "word": "Ethnographic studies",
+      "chinese_meaning": "人类学研究"
+    },
+    {
+      "word": "Survey",
+      "chinese_meaning": "问卷调查"
+    },
+    {
+      "word": "Telephone Interviews",
+      "chinese_meaning": "电话访谈"
+    },
+    {
+      "word": "Personal Interviews",
+      "chinese_meaning": "个人访谈"
+    },
+    {
+      "word": "Focus Groups",
+      "chinese_meaning": "焦点小组"
+    },
+    {
+      "word": "Online or Mail Surveys",
+      "chinese_meaning": "在线或邮件调查"
+    },
+    {
+      "word": "Test marketing",
+      "chinese_meaning": "试销"
+    },
+    {
+      "word": "Back translation",
+      "chinese_meaning": "反向翻译"
+    },
+    {
+      "word": "Big data",
+      "chinese_meaning": "大数据"
+    },
+    {
+      "word": "Internet of Things (IoT)",
+      "chinese_meaning": "物联网"
+    },
+    {
+      "word": "Data mining",
+      "chinese_meaning": "数据挖掘"
+    },
+    {
+      "word": "Predictive analytics",
+      "chinese_meaning": "预测性分析"
+    }
+  ],
+  "Lecture11": [
+    {
+      "word": "Goods",
+      "chinese_meaning": "商品"
+    },
+    {
+      "word": "Services",
+      "chinese_meaning": "服务"
+    },
+    {
+      "word": "Goods–Services Continuum",
+      "chinese_meaning": "商品-服务连续体"
+    },
+    {
+      "word": "Convenience Products",
+      "chinese_meaning": "便利产品"
+    },
+    {
+      "word": "Impulse Items",
+      "chinese_meaning": "冲动购买产品"
+    },
+    {
+      "word": "Staples",
+      "chinese_meaning": "日常必需品"
+    },
+    {
+      "word": "Shopping Products",
+      "chinese_meaning": "购物产品"
+    },
+    {
+      "word": "Homogeneous Shopping Products",
+      "chinese_meaning": "同质购物产品"
+    },
+    {
+      "word": "Heterogeneous Shopping Products",
+      "chinese_meaning": "异质购物产品"
+    },
+    {
+      "word": "Specialty Products",
+      "chinese_meaning": "特殊产品"
+    },
+    {
+      "word": "Business Products",
+      "chinese_meaning": "商业产品"
+    },
+    {
+      "word": "Raw Materials",
+      "chinese_meaning": "原材料"
+    },
+    {
+      "word": "Accessory Equipment",
+      "chinese_meaning": "辅助设备"
+    },
+    {
+      "word": "Component Parts",
+      "chinese_meaning": "零部件"
+    },
+    {
+      "word": "Processed Materials",
+      "chinese_meaning": "加工材料"
+    },
+    {
+      "word": "Supplies",
+      "chinese_meaning": "供应品"
+    },
+    {
+      "word": "Business Services",
+      "chinese_meaning": "商业服务"
+    },
+    {
+      "word": "Brand",
+      "chinese_meaning": "品牌"
+    },
+    {
+      "word": "Brand Name",
+      "chinese_meaning": "品牌名称"
+    },
+    {
+      "word": "Brand Mark",
+      "chinese_meaning": "品牌标志"
+    },
+    {
+      "word": "Trademark",
+      "chinese_meaning": "商标"
+    },
+    {
+      "word": "Trade Name",
+      "chinese_meaning": "商业名称"
+    },
+    {
+      "word": "Brand Equity",
+      "chinese_meaning": "品牌资产"
+    },
+    {
+      "word": "Brand Awareness",
+      "chinese_meaning": "品牌知名度"
+    },
+    {
+      "word": "Brand Loyalty",
+      "chinese_meaning": "品牌忠诚度"
+    },
+    {
+      "word": "Perceived Quality",
+      "chinese_meaning": "感知质量"
+    },
+    {
+      "word": "Brand Associations",
+      "chinese_meaning": "品牌联想"
+    },
+    {
+      "word": "Generic Brand",
+      "chinese_meaning": "通用品牌"
+    },
+    {
+      "word": "Manufacturer's Brand",
+      "chinese_meaning": "制造商品牌"
+    },
+    {
+      "word": "Private Distributor Brands",
+      "chinese_meaning": "私人分销商品牌"
+    },
+    {
+      "word": "Family Brand",
+      "chinese_meaning": "家族品牌"
+    },
+    {
+      "word": "Individual Brand",
+      "chinese_meaning": "单一品牌"
+    },
+    {
+      "word": "Brand Extension",
+      "chinese_meaning": "品牌扩展"
+    },
+    {
+      "word": "Co-Branding",
+      "chinese_meaning": "联合品牌"
+    },
+    {
+      "word": "Brand Licensing",
+      "chinese_meaning": "品牌授权"
+    },
+    {
+      "word": "Brand Manager",
+      "chinese_meaning": "品牌经理"
+    },
+    {
+      "word": "Product Manager",
+      "chinese_meaning": "产品经理"
+    },
+    {
+      "word": "Category Management",
+      "chinese_meaning": "类别管理"
+    },
+    {
+      "word": "New Product Committees",
+      "chinese_meaning": "新产品委员会"
+    },
+    {
+      "word": "Venture Teams",
+      "chinese_meaning": "创业团队"
+    },
+    {
+      "word": "New Product Departments",
+      "chinese_meaning": "新产品部门"
+    },
+    {
+      "word": "Packaging",
+      "chinese_meaning": "包装"
+    },
+    {
+      "word": "Label",
+      "chinese_meaning": "标签"
+    }
+  ],
+  "Lecture12": [
+    {
+      "word": "Market Penetration Strategy",
+      "chinese_meaning": "市场渗透策略"
+    },
+    {
+      "word": "Market Development Strategy",
+      "chinese_meaning": "市场开发策略"
+    },
+    {
+      "word": "Product Development",
+      "chinese_meaning": "产品开发"
+    },
+    {
+      "word": "Product Diversification Strategy",
+      "chinese_meaning": "产品多元化策略"
+    },
+    {
+      "word": "New Product Development Process",
+      "chinese_meaning": "新产品开发过程"
+    },
+    {
+      "word": "Idea Generation",
+      "chinese_meaning": "创意产生"
+    },
+    {
+      "word": "Screening",
+      "chinese_meaning": "筛选"
+    },
+    {
+      "word": "Concept Testing",
+      "chinese_meaning": "概念测试"
+    },
+    {
+      "word": "Business Analysis",
+      "chinese_meaning": "商业分析"
+    },
+    {
+      "word": "Prototype Development",
+      "chinese_meaning": "原型开发"
+    },
+    {
+      "word": "Test Marketing",
+      "chinese_meaning": "测试营销"
+    },
+    {
+      "word": "Commercialization",
+      "chinese_meaning": "商业化"
+    },
+    {
+      "word": "Diffusion Process",
+      "chinese_meaning": "扩散过程"
+    },
+    {
+      "word": "Innovators",
+      "chinese_meaning": "创新者"
+    },
+    {
+      "word": "Early Adopters",
+      "chinese_meaning": "早期采用者"
+    },
+    {
+      "word": "Early Majority",
+      "chinese_meaning": "早期多数"
+    },
+    {
+      "word": "Late Majority",
+      "chinese_meaning": "后期多数"
+    },
+    {
+      "word": "Laggards",
+      "chinese_meaning": "落后者"
+    },
+    {
+      "word": "Product Life Cycle",
+      "chinese_meaning": "产品生命周期"
+    },
+    {
+      "word": "Introduction Stage",
+      "chinese_meaning": "引入阶段"
+    },
+    {
+      "word": "Growth Stage",
+      "chinese_meaning": "增长阶段"
+    },
+    {
+      "word": "Maturity Stage",
+      "chinese_meaning": "成熟阶段"
+    },
+    {
+      "word": "Decline Stage",
+      "chinese_meaning": "下降阶段"
+    },
+    {
+      "word": "Product Mix",
+      "chinese_meaning": "产品组合"
+    },
+    {
+      "word": "Product Mix Breadth",
+      "chinese_meaning": "产品组合宽度"
+    },
+    {
+      "word": "Product Line Depth",
+      "chinese_meaning": "产品线深度"
+    },
+    {
+      "word": "Quality",
+      "chinese_meaning": "质量"
+    },
+    {
+      "word": "Benchmarking",
+      "chinese_meaning": "基准对照"
+    },
+    {
+      "word": "Internal Analysis",
+      "chinese_meaning": "内部分析"
+    },
+    {
+      "word": "External Analysis",
+      "chinese_meaning": "外部分析"
+    },
+    {
+      "word": "Lean",
+      "chinese_meaning": "精益"
+    },
+    {
+      "word": "Six Sigma",
+      "chinese_meaning": "六西格玛"
+    },
+    {
+      "word": "Service Encounter",
+      "chinese_meaning": "服务接触"
+    },
+    {
+      "word": "Service Quality",
+      "chinese_meaning": "服务质量"
+    },
+    {
+      "word": "Tangibles",
+      "chinese_meaning": "有形性"
+    },
+    {
+      "word": "Reliability",
+      "chinese_meaning": "可靠性"
+    },
+    {
+      "word": "Responsiveness",
+      "chinese_meaning": "响应性"
+    },
+    {
+      "word": "Assurances",
+      "chinese_meaning": "保证"
+    },
+    {
+      "word": "Empathy",
+      "chinese_meaning": "同理心"
+    }
+  ],
+  "Lecture13": [
+    {
+      "word": "Price",
+      "chinese_meaning": "价格"
+    },
+    {
+      "word": "Pricing Strategy",
+      "chinese_meaning": "定价策略"
+    },
+    {
+      "word": "Production Costs",
+      "chinese_meaning": "生产成本"
+    },
+    {
+      "word": "Potential Demand",
+      "chinese_meaning": "潜在需求"
+    },
+    {
+      "word": "Price Floor",
+      "chinese_meaning": "价格下限"
+    },
+    {
+      "word": "Price Ceiling",
+      "chinese_meaning": "价格上限"
+    },
+    {
+      "word": "Price Matching",
+      "chinese_meaning": "价格匹配"
+    },
+    {
+      "word": "Pricing Objectives",
+      "chinese_meaning": "定价目标"
+    },
+    {
+      "word": "Profit Maximization",
+      "chinese_meaning": "利润最大化"
+    },
+    {
+      "word": "Sales Maximization",
+      "chinese_meaning": "销售最大化"
+    },
+    {
+      "word": "Status Quo Pricing",
+      "chinese_meaning": "维持现状定价"
+    },
+    {
+      "word": "Markup",
+      "chinese_meaning": "加价"
+    },
+    {
+      "word": "Margin",
+      "chinese_meaning": "利润率"
+    },
+    {
+      "word": "Fixed Costs",
+      "chinese_meaning": "固定成本"
+    },
+    {
+      "word": "Variable Costs",
+      "chinese_meaning": "可变成本"
+    },
+    {
+      "word": "Total Costs",
+      "chinese_meaning": "总成本"
+    },
+    {
+      "word": "Break-Even Analysis",
+      "chinese_meaning": "盈亏平衡分析"
+    },
+    {
+      "word": "Breakeven Point",
+      "chinese_meaning": "盈亏平衡点"
+    },
+    {
+      "word": "Gross Margin",
+      "chinese_meaning": "毛利润"
+    },
+    {
+      "word": "Contribution Margin",
+      "chinese_meaning": "贡献利润率"
+    },
+    {
+      "word": "Cost–Volume–Profit (CVP)",
+      "chinese_meaning": "成本-销量-利润"
+    },
+    {
+      "word": "Price Sensitivity",
+      "chinese_meaning": "价格敏感度"
+    }
+  ],
+  "Lecture14": [
+    {
+      "word": "Supply",
+      "chinese_meaning": "供给"
+    },
+    {
+      "word": "Demand",
+      "chinese_meaning": "需求"
+    },
+    {
+      "word": "Market Equilibrium",
+      "chinese_meaning": "市场均衡"
+    },
+    {
+      "word": "Price Elasticity",
+      "chinese_meaning": "价格弹性"
+    },
+    {
+      "word": "Elasticity of Demand",
+      "chinese_meaning": "需求弹性"
+    },
+    {
+      "word": "Inelasticity of Demand",
+      "chinese_meaning": "需求非弹性"
+    },
+    {
+      "word": "Forecasting Methods",
+      "chinese_meaning": "预测方法"
+    },
+    {
+      "word": "Trend Analysis",
+      "chinese_meaning": "趋势分析"
+    },
+    {
+      "word": "Market Surveys",
+      "chinese_meaning": "市场调查"
+    },
+    {
+      "word": "Sales Forecast",
+      "chinese_meaning": "销售预测"
+    },
+    {
+      "word": "Competitive Pricing Strategies",
+      "chinese_meaning": "竞争定价策略"
+    },
+    {
+      "word": "Price Leadership",
+      "chinese_meaning": "价格领导"
+    },
+    {
+      "word": "Competitive Bidding",
+      "chinese_meaning": "竞争性投标"
+    },
+    {
+      "word": "Dynamic Pricing",
+      "chinese_meaning": "动态定价"
+    },
+    {
+      "word": "Pricing Tactics",
+      "chinese_meaning": "定价策略"
+    },
+    {
+      "word": "Skimming Pricing",
+      "chinese_meaning": "撇脂定价"
+    },
+    {
+      "word": "Penetration Pricing",
+      "chinese_meaning": "渗透定价"
+    },
+    {
+      "word": "Everyday Low Pricing",
+      "chinese_meaning": "日常低价"
+    },
+    {
+      "word": "Perceived Quality",
+      "chinese_meaning": "感知质量"
+    },
+    {
+      "word": "Prestige Products",
+      "chinese_meaning": "声望产品"
+    },
+    {
+      "word": "Legal Constraints",
+      "chinese_meaning": "法律约束"
+    },
+    {
+      "word": "Robinson–Patman Act",
+      "chinese_meaning": "罗宾逊-帕特曼法案"
+    },
+    {
+      "word": "Price Discrimination",
+      "chinese_meaning": "价格歧视"
+    },
+    {
+      "word": "Unfair-Trade Laws",
+      "chinese_meaning": "不公平贸易法"
+    },
+    {
+      "word": "Predatory Pricing",
+      "chinese_meaning": "掠夺性定价"
+    }
+  ],
+  "Lecture15": [
+    {
+      "word": "Distribution Channels",
+      "chinese_meaning": "分销渠道"
+    },
+    {
+      "word": "Marketing Channels",
+      "chinese_meaning": "营销渠道"
+    },
+    {
+      "word": "Direct Channel",
+      "chinese_meaning": "直接渠道"
+    },
+    {
+      "word": "Direct Selling",
+      "chinese_meaning": "直接销售"
+    },
+    {
+      "word": "Marketing Intermediary",
+      "chinese_meaning": "营销中间商"
+    },
+    {
+      "word": "Middleman",
+      "chinese_meaning": "中间人"
+    },
+    {
+      "word": "Retailer Channel",
+      "chinese_meaning": "零售商渠道"
+    },
+    {
+      "word": "Wholesaler Channel",
+      "chinese_meaning": "批发商渠道"
+    },
+    {
+      "word": "Agent Channel",
+      "chinese_meaning": "代理商渠道"
+    },
+    {
+      "word": "Transactional Functions",
+      "chinese_meaning": "交易功能"
+    },
+    {
+      "word": "Logistical Functions",
+      "chinese_meaning": "物流功能"
+    },
+    {
+      "word": "Facilitating Functions",
+      "chinese_meaning": "辅助功能"
+    },
+    {
+      "word": "Channel Length",
+      "chinese_meaning": "渠道长度"
+    },
+    {
+      "word": "Channel Breadth",
+      "chinese_meaning": "渠道宽度"
+    },
+    {
+      "word": "Intensive Distribution",
+      "chinese_meaning": "密集分销"
+    },
+    {
+      "word": "Selective Distribution",
+      "chinese_meaning": "选择性分销"
+    },
+    {
+      "word": "Exclusive Distribution",
+      "chinese_meaning": "独家分销"
+    },
+    {
+      "word": "Supply Chain",
+      "chinese_meaning": "供应链"
+    },
+    {
+      "word": "Supply Chain Management",
+      "chinese_meaning": "供应链管理"
+    },
+    {
+      "word": "Supply Planning",
+      "chinese_meaning": "供应规划"
+    },
+    {
+      "word": "Demand Planning",
+      "chinese_meaning": "需求规划"
+    },
+    {
+      "word": "Manufacturing Flow Management",
+      "chinese_meaning": "制造流程管理"
+    },
+    {
+      "word": "Customer Relationship Management",
+      "chinese_meaning": "客户关系管理"
+    },
+    {
+      "word": "Customer Service Management",
+      "chinese_meaning": "客户服务管理"
+    },
+    {
+      "word": "Warehousing",
+      "chinese_meaning": "仓储"
+    },
+    {
+      "word": "Storage",
+      "chinese_meaning": "存储"
+    },
+    {
+      "word": "Inventory Management",
+      "chinese_meaning": "库存管理"
+    },
+    {
+      "word": "Distribution Centers",
+      "chinese_meaning": "分销中心"
+    },
+    {
+      "word": "Transportation",
+      "chinese_meaning": "运输"
+    },
+    {
+      "word": "Rail",
+      "chinese_meaning": "铁路"
+    },
+    {
+      "word": "Motor Carriers",
+      "chinese_meaning": "汽车运输"
+    },
+    {
+      "word": "Water Carriers",
+      "chinese_meaning": "水运"
+    },
+    {
+      "word": "Inland or Barge Lines",
+      "chinese_meaning": "内河或驳船线"
+    },
+    {
+      "word": "Oceangoing Deep-Water Ships",
+      "chinese_meaning": "远洋深水船"
+    },
+    {
+      "word": "Pipelines",
+      "chinese_meaning": "管道"
+    },
+    {
+      "word": "Air Freight",
+      "chinese_meaning": "航空货运"
+    },
+    {
+      "word": "Intermodal Operations",
+      "chinese_meaning": "多式联运"
+    }
+  ],
+  "Lecture16": [
+    {
+      "word": "Retailing",
+      "chinese_meaning": "零售"
+    },
+    {
+      "word": "Wheel of Retailing",
+      "chinese_meaning": "零售之轮"
+    },
+    {
+      "word": "Target Market",
+      "chinese_meaning": "目标市场"
+    },
+    {
+      "word": "Retail Strategy",
+      "chinese_meaning": "零售策略"
+    },
+    {
+      "word": "Retail Positioning",
+      "chinese_meaning": "零售定位"
+    },
+    {
+      "word": "Merchandise Offering",
+      "chinese_meaning": "商品提供"
+    },
+    {
+      "word": "Store Atmosphere",
+      "chinese_meaning": "商店氛围"
+    },
+    {
+      "word": "Customer Service",
+      "chinese_meaning": "客户服务"
+    },
+    {
+      "word": "Retail Promotion",
+      "chinese_meaning": "零售促销"
+    },
+    {
+      "word": "Store Location",
+      "chinese_meaning": "商店位置"
+    },
+    {
+      "word": "Retail Ownership",
+      "chinese_meaning": "零售所有权"
+    },
+    {
+      "word": "Independent Retailers",
+      "chinese_meaning": "独立零售商"
+    },
+    {
+      "word": "Corporate Chain",
+      "chinese_meaning": "连锁企业"
+    },
+    {
+      "word": "Contractual Systems",
+      "chinese_meaning": "契约系统"
+    },
+    {
+      "word": "Product Line Breadth",
+      "chinese_meaning": "产品线宽度"
+    },
+    {
+      "word": "Product Line Depth",
+      "chinese_meaning": "产品线深度"
+    },
+    {
+      "word": "Specialty Retail",
+      "chinese_meaning": "专业零售"
+    },
+    {
+      "word": "Discount Retail",
+      "chinese_meaning": "折扣零售"
+    },
+    {
+      "word": "Off-Price Retail",
+      "chinese_meaning": "低价零售"
+    },
+    {
+      "word": "Nonstore Retailing",
+      "chinese_meaning": "非店铺零售"
+    },
+    {
+      "word": "Direct Marketing",
+      "chinese_meaning": "直接营销"
+    },
+    {
+      "word": "Direct Mail",
+      "chinese_meaning": "直邮"
+    },
+    {
+      "word": "Direct Selling",
+      "chinese_meaning": "直接销售"
+    },
+    {
+      "word": "Multi-Level Marketing (MLM)",
+      "chinese_meaning": "多层次营销"
+    },
+    {
+      "word": "Online Retailing",
+      "chinese_meaning": "在线零售"
+    },
+    {
+      "word": "Direct-Response Retailing",
+      "chinese_meaning": "直接反应零售"
+    },
+    {
+      "word": "Home Shopping",
+      "chinese_meaning": "家庭购物"
+    },
+    {
+      "word": "Automatic Merchandising",
+      "chinese_meaning": "自动售货"
+    }
+  ],
+  "Lecture17": [
+    {
+      "word": "Integrated Marketing Communications (IMC)",
+      "chinese_meaning": "整合营销传播"
+    },
+    {
+      "word": "Promotional Mix",
+      "chinese_meaning": "促销组合"
+    },
+    {
+      "word": "Advertising",
+      "chinese_meaning": "广告"
+    },
+    {
+      "word": "Personal Selling",
+      "chinese_meaning": "个人销售"
+    },
+    {
+      "word": "Sales Promotion",
+      "chinese_meaning": "销售促销"
+    },
+    {
+      "word": "Direct Marketing",
+      "chinese_meaning": "直接营销"
+    },
+    {
+      "word": "Public Relations",
+      "chinese_meaning": "公共关系"
+    },
+    {
+      "word": "Product Placement",
+      "chinese_meaning": "产品植入"
+    },
+    {
+      "word": "Sponsorship",
+      "chinese_meaning": "赞助"
+    },
+    {
+      "word": "AIDA Concept",
+      "chinese_meaning": "AIDA模型"
+    },
+    {
+      "word": "Attention",
+      "chinese_meaning": "注意力"
+    },
+    {
+      "word": "Interest",
+      "chinese_meaning": "兴趣"
+    },
+    {
+      "word": "Desire",
+      "chinese_meaning": "欲望"
+    },
+    {
+      "word": "Action",
+      "chinese_meaning": "行动"
+    },
+    {
+      "word": "Promotion Objectives",
+      "chinese_meaning": "促销目标"
+    },
+    {
+      "word": "Informing",
+      "chinese_meaning": "告知"
+    },
+    {
+      "word": "Persuading",
+      "chinese_meaning": "说服"
+    },
+    {
+      "word": "Reminding",
+      "chinese_meaning": "提醒"
+    },
+    {
+      "word": "Advertising Appeals",
+      "chinese_meaning": "广告诉求"
+    },
+    {
+      "word": "Fear Appeals",
+      "chinese_meaning": "恐惧诉求"
+    },
+    {
+      "word": "Humor Appeals",
+      "chinese_meaning": "幽默诉求"
+    },
+    {
+      "word": "Emotional Appeals",
+      "chinese_meaning": "情感诉求"
+    },
+    {
+      "word": "Sex Appeals",
+      "chinese_meaning": "性感诉求"
+    },
+    {
+      "word": "Rational Appeals",
+      "chinese_meaning": "理性诉求"
+    },
+    {
+      "word": "Advertising Media",
+      "chinese_meaning": "广告媒体"
+    },
+    {
+      "word": "Television",
+      "chinese_meaning": "电视"
+    },
+    {
+      "word": "Radio",
+      "chinese_meaning": "广播"
+    },
+    {
+      "word": "Newspapers",
+      "chinese_meaning": "报纸"
+    },
+    {
+      "word": "Magazines",
+      "chinese_meaning": "杂志"
+    },
+    {
+      "word": "Direct Mail",
+      "chinese_meaning": "直邮"
+    },
+    {
+      "word": "Outdoor",
+      "chinese_meaning": "户外广告"
+    },
+    {
+      "word": "Digital Media",
+      "chinese_meaning": "数字媒体"
+    },
+    {
+      "word": "Publicity",
+      "chinese_meaning": "宣传"
+    },
+    {
+      "word": "Cross-Promotion",
+      "chinese_meaning": "交叉促销"
+    }
+  ],
+  "Lecture18": [
+    {
+      "word": "Personal Selling",
+      "chinese_meaning": "个人销售"
+    },
+    {
+      "word": "Sales Process",
+      "chinese_meaning": "销售流程"
+    },
+    {
+      "word": "Sales Channels",
+      "chinese_meaning": "销售渠道"
+    },
+    {
+      "word": "Over-the-Counter Selling",
+      "chinese_meaning": "柜台销售"
+    },
+    {
+      "word": "Field Selling",
+      "chinese_meaning": "现场销售"
+    },
+    {
+      "word": "Telemarketing",
+      "chinese_meaning": "电话营销"
+    },
+    {
+      "word": "Inside Selling",
+      "chinese_meaning": "内部销售"
+    },
+    {
+      "word": "Prospecting",
+      "chinese_meaning": "潜在客户开发"
+    },
+    {
+      "word": "Preapproach",
+      "chinese_meaning": "预先接触"
+    },
+    {
+      "word": "Approach",
+      "chinese_meaning": "接近"
+    },
+    {
+      "word": "Sales Presentation",
+      "chinese_meaning": "销售展示"
+    },
+    {
+      "word": "Handling Objections",
+      "chinese_meaning": "处理异议"
+    },
+    {
+      "word": "Closing",
+      "chinese_meaning": "成交"
+    },
+    {
+      "word": "Follow-Up",
+      "chinese_meaning": "跟进"
+    },
+    {
+      "word": "Sales Management",
+      "chinese_meaning": "销售管理"
+    },
+    {
+      "word": "Recruitment and Selection",
+      "chinese_meaning": "招聘与选择"
+    },
+    {
+      "word": "Training",
+      "chinese_meaning": "培训"
+    },
+    {
+      "word": "Organization",
+      "chinese_meaning": "组织"
+    },
+    {
+      "word": "Supervision",
+      "chinese_meaning": "监督"
+    },
+    {
+      "word": "Motivation",
+      "chinese_meaning": "激励"
+    },
+    {
+      "word": "Compensation",
+      "chinese_meaning": "薪酬"
+    },
+    {
+      "word": "Evaluation and Control",
+      "chinese_meaning": "评估与控制"
+    },
+    {
+      "word": "Sales Promotion",
+      "chinese_meaning": "销售促销"
+    },
+    {
+      "word": "Coupons",
+      "chinese_meaning": "优惠券"
+    },
+    {
+      "word": "Refunds and Rebates",
+      "chinese_meaning": "退款和折扣"
+    },
+    {
+      "word": "Sampling",
+      "chinese_meaning": "试用"
+    },
+    {
+      "word": "Contests and Sweepstakes",
+      "chinese_meaning": "比赛和抽奖"
+    },
+    {
+      "word": "Premiums",
+      "chinese_meaning": "赠品"
+    },
+    {
+      "word": "Specialty Advertising",
+      "chinese_meaning": "特色广告"
+    },
+    {
+      "word": "Trade-Oriented Promotions",
+      "chinese_meaning": "面向贸易的促销"
+    },
+    {
+      "word": "Trade Allowances",
+      "chinese_meaning": "贸易折扣"
+    },
+    {
+      "word": "Point-of-Purchase Advertising",
+      "chinese_meaning": "购买点广告"
+    },
+    {
+      "word": "Trade Shows",
+      "chinese_meaning": "贸易展览"
+    },
+    {
+      "word": "Dealer Incentives",
+      "chinese_meaning": "经销商激励"
+    },
+    {
+      "word": "Contests",
+      "chinese_meaning": "竞赛"
+    },
+    {
+      "word": "Training Programs",
+      "chinese_meaning": "培训项目"
+    }
+  ]
+}
