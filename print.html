@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Vocabulary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .controls label {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .controls select {
+            padding: 8px 12px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .controls select:hover {
+            border-color: #666;
+        }
+        /* Two-column grid for the vocabulary list */
+        #vocab-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        .vocab-item {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocab-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .vocab-word {
+            font-weight: bold;
+            color: #34495e;
+        }
+        .vocab-meaning {
+            font-style: italic;
+            color: #2c3e50; /* Changed color to dark blue */
+        }
+        .loading-text {
+            text-align: center;
+            font-size: 1.2em;
+            color: #95a5a6;
+            grid-column: 1 / -1; /* Make loading text span all columns */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Marketing Vocabulary</h1>
+        <div class="controls">
+            <label for="lecture-select">Select Lecture:</label>
+            <select id="lecture-select"></select>
+        </div>
+        <ul id="vocab-list">
+            <p class="loading-text">Loading vocabulary...</p>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lectureSelect = document.getElementById('lecture-select');
+            const vocabList = document.getElementById('vocab-list');
+            let allVocabData = {};
+
+            // Correct URL for the raw JSON content from GitHub
+            const jsonUrl = 'https://raw.githubusercontent.com/wangzhrm/marketing/main/vocab.json';
+
+            // Fetch the vocabulary data from the JSON file
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    allVocabData = data;
+                    // Populate the dropdown with lecture keys
+                    const keys = Object.keys(allVocabData);
+                    keys.forEach(key => {
+                        const option = document.createElement('option');
+                        option.value = key;
+                        option.textContent = key;
+                        lectureSelect.appendChild(option);
+                    });
+
+                    // Display the vocabulary for the first lecture by default
+                    if (keys.length > 0) {
+                        displayVocab(keys[0]);
+                    }
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching the vocabulary data:', error);
+                    vocabList.innerHTML = '<p style="text-align: center; color: red; grid-column: 1 / -1;">Failed to load vocabulary data. Please try again later.</p>';
+                });
+
+            // Handle dropdown change event
+            lectureSelect.addEventListener('change', (event) => {
+                const selectedKey = event.target.value;
+                displayVocab(selectedKey);
+            });
+
+            // Function to display the vocabulary for the selected key
+            function displayVocab(key) {
+                vocabList.innerHTML = '';
+                const vocabArray = allVocabData[key];
+                if (vocabArray) {
+                    vocabArray.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'vocab-item';
+                        // Combine the word and meaning into a single line
+                        listItem.innerHTML = `
+                            <span class="vocab-word">${item.word}</span> <span class="vocab-meaning">(${item.chinese_meaning})</span>
+                        `;
+                        vocabList.appendChild(listItem);
+                    });
+                } else {
+                    vocabList.innerHTML = '<p style="text-align: center; grid-column: 1 / -1;">No vocabulary found for this lecture.</p>';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
