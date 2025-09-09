@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Principles Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12">
+
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Marketing Principles Quiz</h1>
+
+        <div id="quiz-container">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "According to the BCG matrix, why should managers be cautious about 'question marks'?",
+                options: [
+                    "They are highly profitable and expanding rapidly.",
+                    "They may not generate enough cash to become profitable and require significant investment.",
+                    "They already generate more cash than they need.",
+                    "They are guaranteed to become 'stars' with more investment."
+                ],
+                answer: "They may not generate enough cash to become profitable and require significant investment.",
+                explanation: "'Question marks' are in a high-growth market but have a low market share. They require a lot of investment to grow and may not always succeed, hence the uncertainty."
+            },
+            {
+                question: "Why do firms invest heavily in products classified as 'stars' in the BCG matrix?",
+                options: [
+                    "Because they are the easiest products to manage.",
+                    "To maintain their market share and capitalize on high growth.",
+                    "They are a source of considerable income that can be used elsewhere.",
+                    "They are likely to fail without a lot of support."
+                ],
+                answer: "To maintain their market share and capitalize on high growth.",
+                explanation: "'Stars' are products with high market share in high-growth markets. The goal is to invest in them to sustain their position and convert them into 'cash cows' as market growth slows."
+            },
+            {
+                question: "A company that manufactures phones has numerous suppliers for components. This situation most likely leads to:",
+                options: [
+                    "Suppliers having significant bargaining power.",
+                    "High barriers to market entry for new phone manufacturers.",
+                    "The phone company having greater bargaining power over its suppliers.",
+                    "Low rivalry among competitors."
+                ],
+                answer: "The phone company having greater bargaining power over its suppliers.",
+                explanation: "Having multiple suppliers decreases the bargaining power of any single supplier, as the buyer can easily switch to another. This is an example of a factor in Porter's Five Forces."
+            },
+            {
+                question: "In a SWOT analysis, a company's ability to consistently innovate and launch new products would be classified as a(n):",
+                options: [
+                    "Weakness",
+                    "Threat",
+                    "Opportunity",
+                    "Strength"
+                ],
+                answer: "Strength",
+                explanation: "A 'strength' is an internal capability or resource that gives the company a competitive advantage. Innovation is a key strength."
+            },
+            {
+                question: "Some companies focus on niche markets with 'dog' products. Why might this strategy be viable?",
+                options: [
+                    "They are high-risk products with minimal returns.",
+                    "They require significant investment for success in high-growth markets.",
+                    "These products can sometimes be revitalized through innovation and better marketing.",
+                    "They are easy to acquire and dominate new high-growth markets."
+                ],
+                answer: "These products can sometimes be revitalized through innovation and better marketing.",
+                explanation: "Although 'dogs' have low market share and low growth, a company might find a niche market or apply new techniques to make them profitable again."
+            },
+            {
+                question: "Intense competitive rivalry often results in:",
+                options: [
+                    "Higher product prices for consumers.",
+                    "An increase in advertising and promotional spending.",
+                    "Less product differentiation.",
+                    "Companies pooling resources to avoid competition."
+                ],
+                answer: "An increase in advertising and promotional spending.",
+                explanation: "When companies compete fiercely, they often try to gain market share through aggressive marketing, which includes expensive advertising campaigns."
+            },
+            {
+                question: "Which of the following best defines marketing strategies?",
+                options: [
+                    "Short-term actions to achieve objectives.",
+                    "Quantifiable outcome measures.",
+                    "Specific objectives for the organization.",
+                    "Long-term plans and courses of action."
+                ],
+                answer: "Long-term plans and courses of action.",
+                explanation: "Marketing strategies are the long-term, high-level plans that guide a company's marketing efforts, while 'tactics' are the shorter-term actions to execute those strategies."
+            },
+            {
+                question: "Why does the marketing planning process in large corporations typically begin at the corporate level?",
+                options: [
+                    "To focus on specific product plans and customer groups.",
+                    "To set budgets for individual marketing departments.",
+                    "To align all marketing efforts with the company's overall mission and goals.",
+                    "To evaluate competitors and set product pricing."
+                ],
+                answer: "To align all marketing efforts with the company's overall mission and goals.",
+                explanation: "Starting at the corporate level ensures that all marketing plans and decisions made by individual departments are in line with the company's overarching strategic direction."
+            },
+            {
+                question: "A company with a strong brand reputation but outdated, inefficient production processes would consider the production process a:",
+                options: [
+                    "Threat",
+                    "Weakness",
+                    "Opportunity",
+                    "Strength"
+                ],
+                answer: "Weakness",
+                explanation: "A 'weakness' is an internal limitation or a negative factor that can hinder a company's performance. Outdated processes are an internal issue."
+            },
+            {
+                question: "An airline company buying new aircraft from a single manufacturer at a significantly discounted rate due to the large volume of their purchase is an example of:",
+                options: [
+                    "Threat of substitutes",
+                    "Threat of new competitors",
+                    "Supplier power",
+                    "Buyer power"
+                ],
+                answer: "Buyer power",
+                explanation: "'Buyer power' is one of Porter's Five Forces and refers to the leverage buyers have over suppliers. When a buyer purchases in large volumes, they have more power to negotiate prices."
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        function renderQuestions() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'mb-8 p-4 bg-gray-50 rounded-lg border border-gray-200';
+                questionDiv.innerHTML = `
+                    <p class="font-bold text-gray-700 mb-2">Q${index + 1}: ${q.question}</p>
+                    <div class="space-y-2">
+                        ${q.options.map((option, optIndex) => `
+                            <label class="block cursor-pointer p-2 rounded-md hover:bg-gray-100 transition-colors duration-200">
+                                <input type="radio" name="question${index}" value="${option}" class="mr-2" data-question-index="${index}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-q${index}" class="mt-4 hidden p-3 rounded-lg"></div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function handleAnswerSelection(event) {
+            const selectedInput = event.target;
+            if (selectedInput.type === 'radio') {
+                const questionIndex = selectedInput.getAttribute('data-question-index');
+                const question = questions[questionIndex];
+                const feedbackDiv = document.getElementById(`feedback-q${questionIndex}`);
+                const isCorrect = selectedInput.value === question.answer;
+
+                // Disable all radio buttons for this question
+                const radios = document.querySelectorAll(`input[name="question${questionIndex}"]`);
+                radios.forEach(radio => radio.disabled = true);
+
+                if (isCorrect) {
+                    feedbackDiv.className = 'mt-4 p-3 rounded-lg bg-green-100';
+                    feedbackDiv.innerHTML = `
+                        <p class="font-semibold text-green-700">Correct!</p>
+                        <p class="text-sm mt-1 text-green-600">${question.explanation}</p>
+                    `;
+                } else {
+                    feedbackDiv.className = 'mt-4 p-3 rounded-lg bg-red-100';
+                    feedbackDiv.innerHTML = `
+                        <p class="font-semibold text-red-700">Incorrect.</p>
+                        <p class="text-sm mt-1 text-red-600">The correct answer is: <span class="font-medium">${question.answer}</span></p>
+                        <p class="text-sm mt-1 text-red-600">${question.explanation}</p>
+                    `;
+                }
+                feedbackDiv.classList.remove('hidden');
+            }
+        }
+
+        quizContainer.addEventListener('change', handleAnswerSelection);
+
+        renderQuestions();
+    </script>
+
+</body>
+</html>
