@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porter's Five Forces Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .model-explanation {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .model-explanation p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .forces-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        
+        .force-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .force-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .force-header {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .force-content {
+            padding: 25px;
+        }
+        
+        .force-content h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.4rem;
+        }
+        
+        .factors-list {
+            list-style-type: none;
+        }
+        
+        .factors-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .factors-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .threat-new-entrants .force-header {
+            background: #e74c3c;
+        }
+        
+        .bargaining-power-buyers .force-header {
+            background: #3498db;
+        }
+        
+        .bargaining-power-suppliers .force-header {
+            background: #2ecc71;
+        }
+        
+        .threat-substitutes .force-header {
+            background: #f39c12;
+        }
+        
+        .competitive-rivalry .force-header {
+            background: #9b59b6;
+        }
+        
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (min-width: 768px) {
+            .force-card {
+                width: calc(50% - 25px);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .force-card {
+                width: calc(33.333% - 25px);
+            }
+            
+            .competitive-rivalry {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Porter's Five Forces Model</h1>
+            <p class="subtitle">A framework for analyzing a company's competitive environment and determining the intensity of competition in an industry</p>
+        </header>
+        
+        <div class="model-explanation">
+            <p>Porter's Five Forces is a model developed by Michael E. Porter of Harvard Business School in 1979. The five forces framework helps analyze the level of competition and attractiveness of an industry.</p>
+            <p>Understanding these forces helps organizations develop competitive strategies by identifying where power lies in a business situation.</p>
+        </div>
+        
+        <div class="forces-container">
+            <!-- Force 1 -->
+            <div class="force-card threat-new-entrants">
+                <div class="force-header">
+                    <div class="icon"><i class="fas fa-door-open"></i></div>
+                    <h2>Threat of New Entrants</h2>
+                </div>
+                <div class="force-content">
+                    <h3>Factors to Consider:</h3>
+                    <ul class="factors-list">
+                        <li>Barriers to entry (capital requirements, regulations)</li>
+                        <li>Economies of scale</li>
+                        <li>Product differentiation</li>
+                        <li>Brand equity and customer loyalty</li>
+                        <li>Access to distribution channels</li>
+                        <li>Government policies and licensing</li>
+                        <li>Switching costs for customers</li>
+                        <li>Expected retaliation from existing firms</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Force 2 -->
+            <div class="force-card bargaining-power-buyers">
+                <div class="force-header">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h2>Bargaining Power of Buyers</h2>
+                </div>
+                <div class="force-content">
+                    <h3>Factors to Consider:</h3>
+                    <ul class="factors-list">
+                        <li>Number of buyers relative to sellers</li>
+                        <li>Size of each order</li>
+                        <li>Switching costs for buyers</li>
+                        <li>Price sensitivity</li>
+                        <li>Availability of substitute products</li>
+                        <li>Buyer's information availability</li>
+                        <li>Ability to backward integrate</li>
+                        <li>Buyer's profitability</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Force 3 -->
+            <div class="force-card bargaining-power-suppliers">
+                <div class="force-header">
+                    <div class="icon"><i class="fas fa-truck-loading"></i></div>
+                    <h2>Bargaining Power of Suppliers</h2>
+                </div>
+                <div class="force-content">
+                    <h3>Factors to Consider:</h3>
+                    <ul class="factors-list">
+                        <li>Number of suppliers relative to competitors</li>
+                        <li>Uniqueness of supplier's product or service</li>
+                        <li>Switching costs for firms in the industry</li>
+                        <li>Presence of substitute inputs</li>
+                        <li>Supplier's ability to forward integrate</li>
+                        <li>Importance of volume to supplier</li>
+                        <li>Cost of inputs relative to selling price</li>
+                        <li>Supplier concentration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Force 4 -->
+            <div class="force-card threat-substitutes">
+                <div class="force-header">
+                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h2>Threat of Substitute Products</h2>
+                </div>
+                <div class="force-content">
+                    <h3>Factors to Consider:</h3>
+                    <ul class="factors-list">
+                        <li>Number of substitute products available</li>
+                        <li>Relative price performance of substitutes</li>
+                        <li>Switching costs for customers</li>
+                        <li>Buyer propensity to substitute</li>
+                        <li>Perceived level of product differentiation</li>
+                        <li>Availability of close substitutes</li>
+                        <li>Substitute product quality</li>
+                        <li>Marketing efforts of substitute products</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Force 5 -->
+            <div class="force-card competitive-rivalry">
+                <div class="force-header">
+                    <div class="icon"><i class="fas fa-fist-raised"></i></div>
+                    <h2>Intensity of Competitive Rivalry</h2>
+                </div>
+                <div class="force-content">
+                    <h3>Factors to Consider:</h3>
+                    <ul class="factors-list">
+                        <li>Number of competitors</li>
+                        <li>Industry growth rate</li>
+                        <li>Fixed costs versus value added</li>
+                        <li>Intermittent overcapacity</li>
+                        <li>Product differences</li>
+                        <li>Brand identity</li>
+                        <li>Switching costs</li>
+                        <li>Exit barriers</li>
+                        <li>Diversity of competitors</li>
+                        <li>Corporate stakes</li>
+                        <li>Level of advertising expense</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Porter's Five Forces Model &copy; Michael E. Porter, 1979</p>
+            <p>This webpage is for educational purposes only.</p>
+        </footer>
+    </div>
+</body>
+</html>
