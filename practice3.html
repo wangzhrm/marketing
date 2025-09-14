@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice quiz 3 for marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 lg:p-24 bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="container mx-auto p-8 bg-white rounded-2xl shadow-lg max-w-3xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">practice quiz 3 for marketing</h1>
+
+        <form>
+            <div class="space-y-6">
+
+                <!-- Question 1 -->
+                <div id="q1-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">1. Unemployment rises during an economic ________.</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q1" value="a" class="mr-2" onclick="checkAnswer('q1', 'b', 'An economic recession is a period of temporary economic decline, characterized by a general drop in commercial and industrial activity. This often leads to increased unemployment.')"> recovery
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q1" value="b" class="mr-2" onclick="checkAnswer('q1', 'b', 'An economic recession is a period of temporary economic decline, characterized by a general drop in commercial and industrial activity. This often leads to increased unemployment.')"> recession
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q1" value="c" class="mr-2" onclick="checkAnswer('q1', 'b', 'An economic recession is a period of temporary economic decline, characterized by a general drop in commercial and industrial activity. This often leads to increased unemployment.')"> boom
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q1" value="d" class="mr-2" onclick="checkAnswer('q1', 'b', 'An economic recession is a period of temporary economic decline, characterized by a general drop in commercial and industrial activity. This often leads to increased unemployment.')"> expansion
+                        </label>
+                    </div>
+                    <div id="q1-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 2 (REVISED) -->
+                <div id="q2-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">2. Which of the following best describes direct competition?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q2" value="a" class="mr-2" onclick="checkAnswer('q2', 'b', 'Direct competition occurs between two or more firms that offer similar products or services and compete for the same customers.')"> Competition from marketers of substitute products.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q2" value="b" class="mr-2" onclick="checkAnswer('q2', 'b', 'Direct competition occurs between two or more firms that offer similar products or services and compete for the same customers.')"> Competition from marketers of similar products.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q2" value="c" class="mr-2" onclick="checkAnswer('q2', 'b', 'Direct competition occurs between two or more firms that offer similar products or services and compete for the same customers.')"> Competition for discretionary income.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q2" value="d" class="mr-2" onclick="checkAnswer('q2', 'b', 'Direct competition occurs between two or more firms that offer similar products or services and compete for the same customers.')"> Competition between companies in different industries.
+                        </label>
+                    </div>
+                    <div id="q2-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div id="q3-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">3. A business works to maximize profits while maintaining a competitive edge in the market. Which dimension of social responsibility does this focus on?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q3" value="a" class="mr-2" onclick="checkAnswer('q3', 'c', 'Economic responsibility is the most fundamental dimension of social responsibility. A business\'s primary goal is to be profitable and remain in operation, which is essential for all other responsibilities to be met.')"> Ethical
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q3" value="b" class="mr-2" onclick="checkAnswer('q3', 'c', 'Economic responsibility is the most fundamental dimension of social responsibility. A business\'s primary goal is to be profitable and remain in operation, which is essential for all other responsibilities to be met.')"> Legal
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q3" value="c" class="mr-2" onclick="checkAnswer('q3', 'c', 'Economic responsibility is the most fundamental dimension of social responsibility. A business\'s primary goal is to be profitable and remain in operation, which is essential for all other responsibilities to be met.')"> Economic
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q3" value="d" class="mr-2" onclick="checkAnswer('q3', 'c', 'Economic responsibility is the most fundamental dimension of social responsibility. A business\'s primary goal is to be profitable and remain in operation, which is essential for all other responsibilities to be met.')"> Philanthropic
+                        </label>
+                    </div>
+                    <div id="q3-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div id="q4-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">4. It has been seen that periods of major innovations often lead to:</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q4" value="a" class="mr-2" onclick="checkAnswer('q4', 'c', 'Major innovations, such as new technologies or products, can lead to increased productivity and efficiency, which in turn raises the overall standard of living for the population.')"> reduced personal consumption.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q4" value="b" class="mr-2" onclick="checkAnswer('q4', 'c', 'Major innovations, such as new technologies or products, can lead to increased productivity and efficiency, which in turn raises the overall standard of living for the population.')"> reduced discretionary income.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q4" value="c" class="mr-2" onclick="checkAnswer('q4', 'c', 'Major innovations, such as new technologies or products, can lead to increased productivity and efficiency, which in turn raises the overall standard of living for the population.')"> higher standards of living.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q4" value="d" class="mr-2" onclick="checkAnswer('q4', 'c', 'Major innovations, such as new technologies or products, can lead to increased productivity and efficiency, which in turn raises the overall standard of living for the population.')"> decreased annual spending.
+                        </label>
+                    </div>
+                    <div id="q4-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 5 (REVISED) -->
+                <div id="q5-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">5. A marketer's attempt to respond to an increasing number of women in the workforce and a growing emphasis on work-life balance is an example of adjusting to which marketing environment force?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q5" value="a" class="mr-2" onclick="checkAnswer('q5', 'd', 'The socio-cultural environment includes changing demographic characteristics and values of the population. Marketers must adapt their strategies to align with these shifts, such as changes in workforce demographics and social values.')"> The technological environment
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q5" value="b" class="mr-2" onclick="checkAnswer('q5', 'd', 'The socio-cultural environment includes changing demographic characteristics and values of the population. Marketers must adapt their strategies to align with these shifts, such as changes in workforce demographics and social values.')"> The economic environment
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q5" value="c" class="mr-2" onclick="checkAnswer('q5', 'd', 'The socio-cultural environment includes changing demographic characteristics and values of the population. Marketers must adapt their strategies to align with these shifts, such as changes in workforce demographics and social values.')"> The competitive environment
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q5" value="d" class="mr-2" onclick="checkAnswer('q5', 'd', 'The socio-cultural environment includes changing demographic characteristics and values of the population. Marketers must adapt their strategies to align with these shifts, such as changes in workforce demographics and social values.')"> The socio-cultural environment
+                        </label>
+                    </div>
+                    <div id="q5-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 6 -->
+                <div id="q6-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">6. Which of the following is true regarding the impact of technology on a firm’s marketing efforts?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q6" value="a" class="mr-2" onclick="checkAnswer('q6', 'c', 'Technology often allows companies to streamline production and distribution, which can lead to lower costs and, consequently, lower prices for consumers.')"> Technology can deteriorate existing products and customer service.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q6" value="b" class="mr-2" onclick="checkAnswer('q6', 'c', 'Technology often allows companies to streamline production and distribution, which can lead to lower costs and, consequently, lower prices for consumers.')"> Since it is equally accessible by all competitors, it offers limited competitive advantages.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q6" value="c" class="mr-2" onclick="checkAnswer('q6', 'c', 'Technology can reduce prices through new production and distribution methods.')"> Technology can reduce prices through new production and distribution methods.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q6" value="d" class="mr-2" onclick="checkAnswer('q6', 'c', 'Technology can reduce prices through new production and distribution methods.')"> Technology can resist new goods and services.
+                        </label>
+                    </div>
+                    <div id="q6-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 7 (REVISED) -->
+                <div id="q7-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">7. Which of the following statements is true about the ethical issues that influence a firm's distribution decisions?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q7" value="a" class="mr-2" onclick="checkAnswer('q7', 'b', 'A key ethical issue is whether a company should distribute its products in outlets that are no longer profitable, particularly if those outlets have no alternative source of supply.')"> Ethical issues only arise when a company distributes to international markets.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q7" value="b" class="mr-2" onclick="checkAnswer('q7', 'b', 'A key ethical issue is whether a company should distribute its products in outlets that are no longer profitable, particularly if those outlets have no alternative source of supply.')"> A key ethical issue is whether to continue distributing products to outlets that are no longer profitable.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q7" value="c" class="mr-2" onclick="checkAnswer('q7', 'b', 'A key ethical issue is whether a company should distribute its products in outlets that are no longer profitable, particularly if those outlets have no alternative source of supply.')"> Ethical issues in distribution are less common than in product or promotion.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q7" value="d" class="mr-2" onclick="checkAnswer('q7', 'b', 'A key ethical issue is whether a company should distribute its products in outlets that are no longer profitable, particularly if those outlets have no alternative source of supply.')"> Channel control is not considered an ethical issue.
+                        </label>
+                    </div>
+                    <div id="q7-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 8 -->
+                <div id="q8-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">8. A company is paying fair wages to its employees. Which type of responsibility is being fulfilled by the company?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q8" value="a" class="mr-2" onclick="checkAnswer('q8', 'd', 'Ethical responsibility goes beyond legal requirements to ensure a business acts in a fair and just manner. Paying fair wages is a key component of this responsibility.')"> Philanthropic responsibility
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q8" value="b" class="mr-2" onclick="checkAnswer('q8', 'd', 'Ethical responsibility goes beyond legal requirements to ensure a business acts in a fair and just manner. Paying fair wages is a key component of this responsibility.')"> Legal responsibility
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q8" value="c" class="mr-2" onclick="checkAnswer('q8', 'd', 'Ethical responsibility goes beyond legal requirements to ensure a business acts in a fair and just manner. Paying fair wages is a key component of this responsibility.')"> Economic responsibility
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q8" value="d" class="mr-2" onclick="checkAnswer('q8', 'd', 'Ethical responsibility goes beyond legal requirements to ensure a business acts in a fair and just manner. Paying fair wages is a key component of this responsibility.')"> Ethical responsibility
+                        </label>
+                    </div>
+                    <div id="q8-feedback" class="mt-4 hidden"></div>
+                </div>
+                
+                <!-- Question 9 -->
+                <div id="q9-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">9. Which best describes the relationship between different dimensions of marketing ethics?</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q9" value="a" class="mr-2" onclick="checkAnswer('q9', 'd', 'The various dimensions of marketing ethics—such as legal, ethical, and philanthropic—are not isolated but are part of an interconnected system where actions in one area affect the others.')"> They operate independently of each other.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q9" value="b" class="mr-2" onclick="checkAnswer('q9', 'd', 'The various dimensions of marketing ethics—such as legal, ethical, and philanthropic—are not isolated but are part of an interconnected system where actions in one area affect the others.')"> They only matter when legal violations occur.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q9" value="c" class="mr-2" onclick="checkAnswer('q9', 'd', 'The various dimensions of marketing ethics—such as legal, ethical, and philanthropic—are not isolated but are part of an interconnected system where actions in one area affect the others.')"> They are relevant only for consumer-facing activities.
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q9" value="d" class="mr-2" onclick="checkAnswer('q9', 'd', 'The various dimensions of marketing ethics—such as legal, ethical, and philanthropic—are not isolated but are part of an interconnected system where actions in one area affect the others.')"> They form an interconnected system.
+                        </label>
+                    </div>
+                    <div id="q9-feedback" class="mt-4 hidden"></div>
+                </div>
+
+                <!-- Question 10 -->
+                <div id="q10-container" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <p class="font-semibold text-gray-700 mb-4">10. A department store offers discount coupons and lowers prices on 1,000 items in the store in order to generate sales. This is most likely to occur during an economic ________.</p>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="q10" value="a" class="mr-2" onclick="checkAnswer('q10', 'b', 'During an economic recession, consumer spending decreases. Businesses often respond by offering discounts and lowering prices to stimulate sales and attract customers.')"> boom
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q10" value="b" class="mr-2" onclick="checkAnswer('q10', 'b', 'During an economic recession, consumer spending decreases. Businesses often respond by offering discounts and lowering prices to stimulate sales and attract customers.')"> recession
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q10" value="c" class="mr-2" onclick="checkAnswer('q10', 'b', 'During an economic recession, consumer spending decreases. Businesses often respond by offering discounts and lowering prices to stimulate sales and attract customers.')"> recovery
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="q10" value="d" class="mr-2" onclick="checkAnswer('q10', 'b', 'During an economic recession, consumer spending decreases. Businesses often respond by offering discounts and lowering prices to stimulate sales and attract customers.')"> expansion
+                        </label>
+                    </div>
+                    <div id="q10-feedback" class="mt-4 hidden"></div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer, explanation) {
+            const container = document.getElementById(questionId + '-container');
+            const feedbackDiv = document.getElementById(questionId + '-feedback');
+            const radios = container.querySelectorAll('input[type="radio"]');
+            
+            let selectedValue;
+            radios.forEach(radio => {
+                if (radio.checked) {
+                    selectedValue = radio.value;
+                }
+            });
+            
+            // Disable all radio buttons for this question
+            radios.forEach(radio => {
+                radio.disabled = true;
+                const parentLabel = radio.parentElement;
+                if (radio.value === correctAnswer) {
+                    parentLabel.classList.add('font-bold', 'text-green-600');
+                }
+            });
+
+            // Display feedback
+            feedbackDiv.classList.remove('hidden');
+            if (selectedValue === correctAnswer) {
+                feedbackDiv.innerHTML = `<p class="font-bold text-green-600">Correct! </p><p class="mt-2 text-gray-700">${explanation}</p>`;
+            } else {
+                feedbackDiv.innerHTML = `<p class="font-bold text-red-600">Incorrect. The correct answer is: </p><p class="mt-2 text-gray-700">${explanation}</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>
