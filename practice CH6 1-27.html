@@ -1,0 +1,428 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Behavior Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 5px;
+            transition: background-color 0.2s;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            color: #006400;
+        }
+        .answer.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consumer Behavior Quiz</h1>
+    <div id="quiz">
+        <div class="question" id="q1">
+            <p>1. What is consumer behavior?</p>
+            <div class="options">
+                <label for="q1a">A. The process of evaluating products after purchase<input type="radio" id="q1a" name="q1" value="a" onclick="showAnswer('q1')"></label>
+                <label for="q1b">B. The process of advertising products<input type="radio" id="q1b" name="q1" value="b" onclick="showAnswer('q1')"></label>
+                <label for="q1c">C. The process through which household consumers make purchasing decisions<input type="radio" id="q1c" name="q1" value="c" onclick="showAnswer('q1')"></label>
+                <label for="q1d">D. The process of businesses making purchasing decisions<input type="radio" id="q1d" name="q1" value="d" onclick="showAnswer('q1')"></label>
+            </div>
+            <div class="answer" id="answer-q1">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Consumer behavior refers to the process by which ultimate buyers or household consumers make decisions about purchasing products or services.</p>
+            </div>
+        </div>
+        <div class="question" id="q2">
+            <p>2. Which of the following is a social factor influencing consumer behavior?</p>
+            <div class="options">
+                <label for="q2a">A. Motivation<input type="radio" id="q2a" name="q2" value="a" onclick="showAnswer('q2')"></label>
+                <label for="q2b">B. Culture<input type="radio" id="q2b" name="q2" value="b" onclick="showAnswer('q2')"></label>
+                <label for="q2c">C. Perception<input type="radio" id="q2c" name="q2" value="c" onclick="showAnswer('q2')"></label>
+                <label for="q2d">D. Personal preferences<input type="radio" id="q2d" name="q2" value="d" onclick="showAnswer('q2')"></label>
+            </div>
+            <div class="answer" id="answer-q2">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Social factors include external influences like culture, social class, reference groups, family, and opinion leaders.</p>
+            </div>
+        </div>
+        <div class="question" id="q3">
+            <p>3. What type of music do high-end restaurants use to encourage customers to stay longer?</p>
+            <div class="options">
+                <label for="q3a">A. Loud music<input type="radio" id="q3a" name="q3" value="a" onclick="showAnswer('q3')"></label>
+                <label for="q3b">B. No music<input type="radio" id="q3b" name="q3" value="b" onclick="showAnswer('q3')"></label>
+                <label for="q3c">C. Fast-tempo music<input type="radio" id="q3c" name="q3" value="c" onclick="showAnswer('q3')"></label>
+                <label for="q3d">D. Slow-tempo music<input type="radio" id="q3d" name="q3" value="d" onclick="showAnswer('q3')"></label>
+            </div>
+            <div class="answer" id="answer-q3">
+                <p><strong>Correct Answer: D</strong></p>
+                <p><strong>Explanation:</strong> High-end restaurants use slow-tempo music to create a relaxed atmosphere, encouraging customers to stay longer and order more.</p>
+            </div>
+        </div>
+        <div class="question" id="q4">
+            <p>4. What is the first step in the consumer decision process?</p>
+            <div class="options">
+                <label for="q4a">A. Problem or opportunity recognition<input type="radio" id="q4a" name="q4" value="a" onclick="showAnswer('q4')"></label>
+                <label for="q4b">B. Post-purchase evaluation<input type="radio" id="q4b" name="q4" value="b" onclick="showAnswer('q4')"></label>
+                <label for="q4c">C. Purchase decision<input type="radio" id="q4c" name="q4" value="c" onclick="showAnswer('q4')"></label>
+                <label for="q4d">D. Information search<input type="radio" id="q4d" name="q4" value="d" onclick="showAnswer('q4')"></label>
+            </div>
+            <div class="answer" id="answer-q4">
+                <p><strong>Correct Answer: A</strong></p>
+                <p><strong>Explanation:</strong> The consumer decision process begins with recognizing a problem or need that prompts the consumer to take action.</p>
+            </div>
+        </div>
+        <div class="question" id="q5">
+            <p>5. What are internal sources in the information search stage?</p>
+            <div class="options">
+                <label for="q5a">A. Advertisements<input type="radio" id="q5a" name="q5" value="a" onclick="showAnswer('q5')"></label>
+                <label for="q5b">B. Opinions from friends<input type="radio" id="q5b" name="q5" value="b" onclick="showAnswer('q5')"></label>
+                <label for="q5c">C. Mental review<input type="radio" id="q5c" name="q5" value="c" onclick="showAnswer('q5')"></label>
+                <label for="q5d">D. Online reviews<input type="radio" id="q5d" name="q5" value="d" onclick="showAnswer('q5')"></label>
+            </div>
+            <div class="answer" id="answer-q5">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Internal sources involve a consumer’s mental review of their own experiences and knowledge during the information search stage.</p>
+            </div>
+        </div>
+        <div class="question" id="q6">
+            <p>6. What is the evoked set?</p>
+            <div class="options">
+                <label for="q6a">A. A marketing strategy<input type="radio" id="q6a" name="q6" value="a" onclick="showAnswer('q6')"></label>
+                <label for="q6b">B. Collection of alternatives a consumer considers<input type="radio" id="q6b" name="q6" value="b" onclick="showAnswer('q6')"></label>
+                <label for="q6c">C. A type of advertising<input type="radio" id="q6c" name="q6" value="c" onclick="showAnswer('q6')"></label>
+                <label for="q6d">D. A list of all products available<input type="radio" id="q6d" name="q6" value="d" onclick="showAnswer('q6')"></label>
+            </div>
+            <div class="answer" id="answer-q6">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The evoked set is the group of product or brand alternatives a consumer considers when making a purchase decision.</p>
+            </div>
+        </div>
+        <div class="question" id="q7">
+            <p>7. What are evaluative criteria?</p>
+            <div class="options">
+                <label for="q7a">A. The brand’s advertising budget<input type="radio" id="q7a" name="q7" value="a" onclick="showAnswer('q7')"></label>
+                <label for="q7b">B. The store location<input type="radio" id="q7b" name="q7" value="b" onclick="showAnswer('q7')"></label>
+                <label for="q7c">C. Features a consumer considers when choosing alternatives<input type="radio" id="q7c" name="q7" value="c" onclick="showAnswer('q7')"></label>
+                <label for="q7d">D. The price of a product<input type="radio" id="q7d" name="q7" value="d" onclick="showAnswer('q7')"></label>
+            </div>
+            <div class="answer" id="answer-q7">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Evaluative criteria are the specific features, such as quality or price, that a consumer uses to evaluate their options.</p>
+            </div>
+        </div>
+        <div class="question" id="q8">
+            <p>8. How can marketers influence the evaluation of alternatives stage?</p>
+            <div class="options">
+                <label for="q8a">A. By limiting product availability<input type="radio" id="q8a" name="q8" value="a" onclick="showAnswer('q8')"></label>
+                <label for="q8b">B. By changing store hours<input type="radio" id="q8b" name="q8" value="b" onclick="showAnswer('q8')"></label>
+                <label for="q8c">C. By educating consumers about important attributes<input type="radio" id="q8c" name="q8" value="c" onclick="showAnswer('q8')"></label>
+                <label for="q8d">D. By reducing product prices<input type="radio" id="q8d" name="q8" value="d" onclick="showAnswer('q8')"></label>
+            </div>
+            <div class="answer" id="answer-q8">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Marketers can influence this stage by educating consumers about key product attributes and showing why their brand meets those criteria.</p>
+            </div>
+        </div>
+        <div class="question" id="q9">
+            <p>9. What does the purchase decision step involve?</p>
+            <div class="options">
+                <label for="q9a">A. Recognizing a need<input type="radio" id="q9a" name="q9" value="a" onclick="showAnswer('q9')"></label>
+                <label for="q9b">B. Deciding where to purchase an item<input type="radio" id="q9b" name="q9" value="b" onclick="showAnswer('q9')"></label>
+                <label for="q9c">C. Reviewing the product after purchase<input type="radio" id="q9c" name="q9" value="c" onclick="showAnswer('q9')"></label>
+                <label for="q9d">D. Evaluating product quality<input type="radio" id="q9d" name="q9" value="d" onclick="showAnswer('q9')"></label>
+            </div>
+            <div class="answer" id="answer-q9">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The purchase decision step involves choosing where to buy the product, influenced by factors like delivery options or store convenience.</p>
+            </div>
+        </div>
+        <div class="question" id="q10">
+            <p>10. What happens in the purchase act step?</p>
+            <div class="options">
+                <label for="q10a">A. Consumers recognize a need<input type="radio" id="q10a" name="q10" value="a" onclick="showAnswer('q10')"></label>
+                <label for="q10b">B. Consumers search for information<input type="radio" id="q10b" name="q10" value="b" onclick="showAnswer('q10')"></label>
+                <label for="q10c">C. Consumers actually buy the item<input type="radio" id="q10c" name="q10" value="c" onclick="showAnswer('q10')"></label>
+                <label for="q10d">D. Consumers evaluate the product<input type="radio" id="q10d" name="q10" value="d" onclick="showAnswer('q10')"></label>
+            </div>
+            <div class="answer" id="answer-q10">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> The purchase act is when the consumer completes the transaction and purchases the chosen product.</p>
+            </div>
+        </div>
+        <div class="question" id="q11">
+            <p>11. What is cognitive dissonance?</p>
+            <div class="options">
+                <label for="q11a">A. A type of advertising<input type="radio" id="q11a" name="q11" value="a" onclick="showAnswer('q11')"></label>
+                <label for="q11b">B. Imbalance after a purchase decision<input type="radio" id="q11b" name="q11" value="b" onclick="showAnswer('q11')"></label>
+                <label for="q11c">C. Satisfaction with a purchase<input type="radio" id="q11c" name="q11" value="c" onclick="showAnswer('q11')"></label>
+                <label for="q11d">D. A social factor<input type="radio" id="q11d" name="q11" value="d" onclick="showAnswer('q11')"></label>
+            </div>
+            <div class="answer" id="answer-q11">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Cognitive dissonance is the discomfort or imbalance a consumer feels after making a purchase, often due to conflicting thoughts or doubts.</p>
+            </div>
+        </div>
+        <div class="question" id="q12">
+            <p>12. What can marketers do to reduce cognitive dissonance?</p>
+            <div class="options">
+                <label for="q12a">A. Provide information supporting the chosen item<input type="radio" id="q12a" name="q12" value="a" onclick="showAnswer('q12')"></label>
+                <label for="q12b">B. Change store locations<input type="radio" id="q12b" name="q12" value="b" onclick="showAnswer('q12')"></label>
+                <label for="q12c">C. Limit product availability<input type="radio" id="q12c" name="q12" value="c" onclick="showAnswer('q12')"></label>
+                <label for="q12d">D. Increase product prices<input type="radio" id="q12d" name="q12" value="d" onclick="showAnswer('q12')"></label>
+            </div>
+            <div class="answer" id="answer-q12">
+                <p><strong>Correct Answer: A</strong></p>
+                <p><strong>Explanation:</strong> Marketers can reduce cognitive dissonance by providing information that reassures the consumer about their purchase decision.</p>
+            </div>
+        </div>
+        <div class="question" id="q13">
+            <p>13. What is involvement in consumer behavior?</p>
+            <div class="options">
+                <label for="q13a">A. The store’s location<input type="radio" id="q13a" name="q13" value="a" onclick="showAnswer('q13')"></label>
+                <label for="q13b">B. The brand’s popularity<input type="radio" id="q13b" name="q13" value="b" onclick="showAnswer('q13')"></label>
+                <label for="q13c">C. Degree of interest in a product<input type="radio" id="q13c" name="q13" value="c" onclick="showAnswer('q13')"></label>
+                <label for="q13d">D. The price of a product<input type="radio" id="q13d" name="q13" value="d" onclick="showAnswer('q13')"></label>
+            </div>
+            <div class="answer" id="answer-q13">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Involvement refers to how much interest a consumer has in a product and how important that product is to them.</p>
+            </div>
+        </div>
+        <div class="question" id="q14">
+            <p>14. What is routinized response behavior?</p>
+            <div class="options">
+                <label for="q14a">A. Complex decision-making for expensive items<input type="radio" id="q14a" name="q14" value="a" onclick="showAnswer('q14')"></label>
+                <label for="q14b">B. Decisions influenced by advertising<input type="radio" id="q14b" name="q14" value="b" onclick="showAnswer('q14')"></label>
+                <label for="q14c">C. Purchases made frequently for low-involvement products<input type="radio" id="q14c" name="q14" value="c" onclick="showAnswer('q14')"></label>
+                <label for="q14d">D. Decisions for high-involvement products<input type="radio" id="q14d" name="q14" value="d" onclick="showAnswer('q14')"></label>
+            </div>
+            <div class="answer" id="answer-q14">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Routinized response behavior occurs for low-involvement, frequently purchased products, requiring minimal decision-making effort.</p>
+            </div>
+        </div>
+        <div class="question" id="q15">
+            <p>15. When does limited problem solving occur?</p>
+            <div class="options">
+                <label for="q15a">A. For post-purchase evaluation<input type="radio" id="q15a" name="q15" value="a" onclick="showAnswer('q15')"></label>
+                <label for="q15b">B. For purchases made less frequently with limited knowledge<input type="radio" id="q15b" name="q15" value="b" onclick="showAnswer('q15')"></label>
+                <label for="q15c">C. For routine purchases<input type="radio" id="q15c" name="q15" value="c" onclick="showAnswer('q15')"></label>
+                <label for="q15d">D. For high-involvement products<input type="radio" id="q15d" name="q15" value="d" onclick="showAnswer('q15')"></label>
+            </div>
+            <div class="answer" id="answer-q15">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Limited problem solving occurs when consumers make less frequent purchases and have limited knowledge or experience with the product.</p>
+            </div>
+        </div>
+        <div class="question" id="q16">
+            <p>16. What is extended problem solving?</p>
+            <div class="options">
+                <label for="q16a">A. Complex decisions for high-involvement products<input type="radio" id="q16a" name="q16" value="a" onclick="showAnswer('q16')"></label>
+                <label for="q16b">B. Routine purchases with minimal effort<input type="radio" id="q16b" name="q16" value="b" onclick="showAnswer('q16')"></label>
+                <label for="q16c">C. Post-purchase evaluations<input type="radio" id="q16c" name="q16" value="c" onclick="showAnswer('q16')"></label>
+                <label for="q16d">D. Decisions based on advertisements<input type="radio" id="q16d" name="q16" value="d" onclick="showAnswer('q16')"></label>
+            </div>
+            <div class="answer" id="answer-q16">
+                <p><strong>Correct Answer: A</strong></p>
+                <p><strong>Explanation:</strong> Extended problem solving is used for high-involvement products with significant financial or social risks, requiring thorough decision-making.</p>
+            </div>
+        </div>
+        <div class="question" id="q17">
+            <p>17. What determines a person’s social class?</p>
+            <div class="options">
+                <label for="q17a">A. Their age<input type="radio" id="q17a" name="q17" value="a" onclick="showAnswer('q17')"></label>
+                <label for="q17b">B. Their favorite brands<input type="radio" id="q17b" name="q17" value="b" onclick="showAnswer('q17')"></label>
+                <label for="q17c">C. Their occupation, education, and income<input type="radio" id="q17c" name="q17" value="c" onclick="showAnswer('q17')"></label>
+                <label for="q17d">D. Their hobbies<input type="radio" id="q17d" name="q17" value="d" onclick="showAnswer('q17')"></label>
+            </div>
+            <div class="answer" id="answer-q17">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Social class is determined by factors like occupation, education, income or wealth, and possessions.</p>
+            </div>
+        </div>
+        <div class="question" id="q18">
+            <p>18. How does social class influence purchasing behavior?</p>
+            <div class="options">
+                <label for="q18a">A. By controlling advertising strategies<input type="radio" id="q18a" name="q18" value="a" onclick="showAnswer('q18')"></label>
+                <label for="q18b">B. By limiting product availability<input type="radio" id="q18b" name="q18" value="b" onclick="showAnswer('q18')"></label>
+                <label for="q18c">C. By determining store hours<input type="radio" id="q18c" name="q18" value="c" onclick="showAnswer('q18')"></label>
+                <label for="q18d">D. By affecting disposable income and brand choice<input type="radio" id="q18d" name="q18" value="d" onclick="showAnswer('q18')"></label>
+            </div>
+            <div class="answer" id="answer-q18">
+                <p><strong>Correct Answer: D</strong></p>
+                <p><strong>Explanation:</strong> Social class influences purchasing behavior through disposable income, brand preferences, and store choices.</p>
+            </div>
+        </div>
+        <div class="question" id="q19">
+            <p>19. What are reference groups?</p>
+            <div class="options">
+                <label for="q19a">A. People or institutions whose opinions are valued<input type="radio" id="q19a" name="q19" value="a" onclick="showAnswer('q19')"></label>
+                <label for="q19b">B. Groups that advertise products<input type="radio" id="q19b" name="q19" value="b" onclick="showAnswer('q19')"></label>
+                <label for="q19c">C. Groups that limit product availability<input type="radio" id="q19c" name="q19" value="c" onclick="showAnswer('q19')"></label>
+                <label for="q19d">D. Groups that set product prices<input type="radio" id="q19d" name="q19" value="d" onclick="showAnswer('q19')"></label>
+            </div>
+            <div class="answer" id="answer-q19">
+                <p><strong>Correct Answer: A</strong></p>
+                <p><strong>Explanation:</strong> Reference groups are individuals or institutions whose opinions guide a consumer’s behavior, values, and purchasing decisions.</p>
+            </div>
+        </div>
+        <div class="question" id="q20">
+            <p>20. What is an aspirational reference group?</p>
+            <div class="options">
+                <label for="q20a">A. A group that sets prices<input type="radio" id="q20a" name="q20" value="a" onclick="showAnswer('q20')"></label>
+                <label for="q20b">B. A group consumers want to be associated with<input type="radio" id="q20b" name="q20" value="b" onclick="showAnswer('q20')"></label>
+                <label for="q20c">C. A group consumers avoid<input type="radio" id="q20c" name="q20" value="c" onclick="showAnswer('q20')"></label>
+                <label for="q20d">D. A group that advertises products<input type="radio" id="q20d" name="q20" value="d" onclick="showAnswer('q20')"></label>
+            </div>
+            <div class="answer" id="answer-q20">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Aspirational reference groups, like celebrities, are those consumers want to emulate by purchasing items they endorse.</p>
+            </div>
+        </div>
+        <div class="question" id="q21">
+            <p>21. What is a non-aspirational reference group?</p>
+            <div class="options">
+                <label for="q21a">A. A group that advertises products<input type="radio" id="q21a" name="q21" value="a" onclick="showAnswer('q21')"></label>
+                <label for="q21b">B. A group consumers avoid associating with<input type="radio" id="q21b" name="q21" value="b" onclick="showAnswer('q21')"></label>
+                <label for="q21c">C. A group that sets prices<input type="radio" id="q21c" name="q21" value="c" onclick="showAnswer('q21')"></label>
+                <label for="q21d">D. A group consumers want to emulate<input type="radio" id="q21d" name="q21" value="d" onclick="showAnswer('q21')"></label>
+            </div>
+            <div class="answer" id="answer-q21">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Non-aspirational reference groups are those consumers do not want to be associated with, leading them to avoid related products.</p>
+            </div>
+        </div>
+        <div class="question" id="q22">
+            <p>22. When do reference groups influence purchasing behavior?</p>
+            <div class="options">
+                <label for="q22a">A. When the product is expensive<input type="radio" id="q22a" name="q22" value="a" onclick="showAnswer('q22')"></label>
+                <label for="q22b">B. When the product is unavailable<input type="radio" id="q22b" name="q22" value="b" onclick="showAnswer('q22')"></label>
+                <label for="q22c">C. When the product is visible and the purchaser is susceptible to influence<input type="radio" id="q22c" name="q22" value="c" onclick="showAnswer('q22')"></label>
+                <label for="q22d">D. When the product is invisible to others<input type="radio" id="q22d" name="q22" value="d" onclick="showAnswer('q22')"></label>
+            </div>
+            <div class="answer" id="answer-q22">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Reference groups influence purchasing when the product is visible to others and the consumer is open to their influence.</p>
+            </div>
+        </div>
+        <div class="question" id="q23">
+            <p>23. Who are opinion leaders?</p>
+            <div class="options">
+                <label for="q23a">A. People who advertise products<input type="radio" id="q23a" name="q23" value="a" onclick="showAnswer('q23')"></label>
+                <label for="q23b">B. Trendsetters who influence others with their purchases<input type="radio" id="q23b" name="q23" value="b" onclick="showAnswer('q23')"></label>
+                <label for="q23c">C. People who avoid new products<input type="radio" id="q23c" name="q23" value="c" onclick="showAnswer('q23')"></label>
+                <label for="q23d">D. People who set product prices<input type="radio" id="q23d" name="q23" value="d" onclick="showAnswer('q23')"></label>
+            </div>
+            <div class="answer" id="answer-q23">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Opinion leaders are trendsetters who adopt new products early and influence others through their experiences and opinions.</p>
+            </div>
+        </div>
+        <div class="question" id="q24">
+            <p>24. What is the most important determinant of consumer behavior?</p>
+            <div class="options">
+                <label for="q24a">A. Product price<input type="radio" id="q24a" name="q24" value="a" onclick="showAnswer('q24')"></label>
+                <label for="q24b">B. Store location<input type="radio" id="q24b" name="q24" value="b" onclick="showAnswer('q24')"></label>
+                <label for="q24c">C. Family<input type="radio" id="q24c" name="q24" value="c" onclick="showAnswer('q24')"></label>
+                <label for="q24d">D. Advertising<input type="radio" id="q24d" name="q24" value="d" onclick="showAnswer('q24')"></label>
+            </div>
+            <div class="answer" id="answer-q24">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Family is considered the most important determinant of consumer behavior due to its influence on values, preferences, and decisions.</p>
+            </div>
+        </div>
+        <div class="question" id="q25">
+            <p>25. What are household lifecycles?</p>
+            <div class="options">
+                <label for="q25a">A. Stages in a store’s operation<input type="radio" id="q25a" name="q25" value="a" onclick="showAnswer('q25')"></label>
+                <label for="q25b">B. Stages in life like marriage or childbirth<input type="radio" id="q25b" name="q25" value="b" onclick="showAnswer('q25')"></label>
+                <label for="q25c">C. Stages in advertising campaigns<input type="radio" id="q25c" name="q25" value="c" onclick="showAnswer('q25')"></label>
+                <label for="q25d">D. Stages in a product’s life<input type="radio" id="q25d" name="q25" value="d" onclick="showAnswer('q25')"></label>
+            </div>
+            <div class="answer" id="answer-q25">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Household lifecycles refer to life stages like young adulthood, marriage, or childbirth that influence consumer behavior.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer(questionId) {
+            const answerDiv = document.getElementById(`answer-${questionId}`);
+            answerDiv.classList.add('show');
+        }
+    </script>
+</body>
+</html>
