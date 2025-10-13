@@ -1,0 +1,363 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Behavior Maslow Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 5px;
+            transition: background-color 0.2s;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            color: #006400;
+        }
+        .answer.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consumer Behavior Maslow Quiz</h1>
+    <div id="quiz">
+        <div class="question" id="q1">
+            <p>1. A company advertises a new line of organic foods with the slogan “Purely Natural, Purely You.” Which need from Maslow’s hierarchy is this campaign targeting?</p>
+            <div class="options">
+                <label for="q1a">A. Safety needs<input type="radio" id="q1a" name="q1" value="a" onclick="showAnswer('q1')"></label>
+                <label for="q1b">B. Physiological needs<input type="radio" id="q1b" name="q1" value="b" onclick="showAnswer('q1')"></label>
+                <label for="q1c">C. Esteem needs<input type="radio" id="q1c" name="q1" value="c" onclick="showAnswer('q1')"></label>
+                <label for="q1d">D. Self-actualization needs<input type="radio" id="q1d" name="q1" value="d" onclick="showAnswer('q1')"></label>
+            </div>
+            <div class="answer" id="answer-q1">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The campaign focuses on organic foods, which relate to basic physiological needs like food and health.</p>
+            </div>
+        </div>
+        <div class="question" id="q2">
+            <p>2. A car company promotes its vehicles with the tagline “Drive with Confidence.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q2a">A. Belongingness needs<input type="radio" id="q2a" name="q2" value="a" onclick="showAnswer('q2')"></label>
+                <label for="q2b">B. Safety needs<input type="radio" id="q2b" name="q2" value="b" onclick="showAnswer('q2')"></label>
+                <label for="q2c">C. Esteem needs<input type="radio" id="q2c" name="q2" value="c" onclick="showAnswer('q2')"></label>
+                <label for="q2d">D. Physiological needs<input type="radio" id="q2d" name="q2" value="d" onclick="showAnswer('q2')"></label>
+            </div>
+            <div class="answer" id="answer-q2">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The tagline emphasizes confidence in driving, which relates to safety needs by promoting security and protection.</p>
+            </div>
+        </div>
+        <div class="question" id="q3">
+            <p>3. A cosmetics brand uses the slogan “Be Your Beautiful Self.” Which need is this campaign addressing?</p>
+            <div class="options">
+                <label for="q3a">A. Physiological needs<input type="radio" id="q3a" name="q3" value="a" onclick="showAnswer('q3')"></label>
+                <label for="q3b">B. Safety needs<input type="radio" id="q3b" name="q3" value="b" onclick="showAnswer('q3')"></label>
+                <label for="q3c">C. Esteem needs<input type="radio" id="q3c" name="q3" value="c" onclick="showAnswer('q3')"></label>
+                <label for="q3d">D. Belongingness needs<input type="radio" id="q3d" name="q3" value="d" onclick="showAnswer('q3')"></label>
+            </div>
+            <div class="answer" id="answer-q3">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> The slogan focuses on beauty and self-expression, which ties to esteem needs by enhancing self-worth and confidence.</p>
+            </div>
+        </div>
+        <div class="question" id="q4">
+            <p>4. A travel agency advertises with “Discover Your True Potential.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q4a">A. Safety needs<input type="radio" id="q4a" name="q4" value="a" onclick="showAnswer('q4')"></label>
+                <label for="q4b">B. Belongingness needs<input type="radio" id="q4b" name="q4" value="b" onclick="showAnswer('q4')"></label>
+                <label for="q4c">C. Self-actualization needs<input type="radio" id="q4c" name="q4" value="c" onclick="showAnswer('q4')"></label>
+                <label for="q4d">D. Esteem needs<input type="radio" id="q4d" name="q4" value="d" onclick="showAnswer('q4')"></label>
+            </div>
+            <div class="answer" id="answer-q4">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> The focus on discovering potential aligns with self-actualization needs, emphasizing personal growth and fulfillment.</p>
+            </div>
+        </div>
+        <div class="question" id="q5">
+            <p>5. A fast-food chain uses bright red and yellow colors in its packaging. Which psychological factor is this targeting?</p>
+            <div class="options">
+                <label for="q5a">A. Attitudes<input type="radio" id="q5a" name="q5" value="a" onclick="showAnswer('q5')"></label>
+                <label for="q5b">B. Perception<input type="radio" id="q5b" name="q5" value="b" onclick="showAnswer('q5')"></label>
+                <label for="q5c">C. Learning<input type="radio" id="q5c" name="q5" value="c" onclick="showAnswer('q5')"></label>
+                <label for="q5d">D. Motivation<input type="radio" id="q5d" name="q5" value="d" onclick="showAnswer('q5')"></label>
+            </div>
+            <div class="answer" id="answer-q5">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Bright colors influence perception by attracting attention and creating a sense of excitement through visual stimuli.</p>
+            </div>
+        </div>
+        <div class="question" id="q6">
+            <p>6. A gym promotes memberships with “Join the Fitness Family.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q6a">A. Physiological needs<input type="radio" id="q6a" name="q6" value="a" onclick="showAnswer('q6')"></label>
+                <label for="q6b">B. Safety needs<input type="radio" id="q6b" name="q6" value="b" onclick="showAnswer('q6')"></label>
+                <label for="q6c">C. Belongingness needs<input type="radio" id="q6c" name="q6" value="c" onclick="showAnswer('q6')"></label>
+                <label for="q6d">D. Esteem needs<input type="radio" id="q6d" name="q6" value="d" onclick="showAnswer('q6')"></label>
+            </div>
+            <div class="answer" id="answer-q6">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> The slogan emphasizes community and connection, appealing to belongingness needs.</p>
+            </div>
+        </div>
+        <div class="question" id="q7">
+            <p>7. A luxury car brand uses the tagline “Engineered for Excellence.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q7a">A. Physiological needs<input type="radio" id="q7a" name="q7" value="a" onclick="showAnswer('q7')"></label>
+                <label for="q7b">B. Safety needs<input type="radio" id="q7b" name="q7" value="b" onclick="showAnswer('q7')"></label>
+                <label for="q7c">C. Esteem needs<input type="radio" id="q7c" name="q7" value="c" onclick="showAnswer('q7')"></label>
+                <label for="q7d">D. Self-actualization needs<input type="radio" id="q7d" name="q7" value="d" onclick="showAnswer('q7')"></label>
+            </div>
+            <div class="answer" id="answer-q7">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> The focus on excellence appeals to esteem needs, emphasizing status and achievement.</p>
+            </div>
+        </div>
+        <div class="question" id="q8">
+            <p>8. A tech company promotes its products with “Innovate the Future.” Which psychological factor is this campaign targeting to create a positive attitude?</p>
+            <div class="options">
+                <label for="q8a">A. Perception<input type="radio" id="q8a" name="q8" value="a" onclick="showAnswer('q8')"></label>
+                <label for="q8b">B. Attitudes<input type="radio" id="q8b" name="q8" value="b" onclick="showAnswer('q8')"></label>
+                <label for="q8c">C. Learning<input type="radio" id="q8c" name="q8" value="c" onclick="showAnswer('q8')"></label>
+                <label for="q8d">D. Motivation<input type="radio" id="q8d" name="q8" value="d" onclick="showAnswer('q8')"></label>
+            </div>
+            <div class="answer" id="answer-q8">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The slogan links the brand to innovation, a concept people generally view positively, to shape favorable consumer attitudes.</p>
+            </div>
+        </div>
+        <div class="question" id="q9">
+            <p>9. An insurance company advertises with “Protect What Matters Most.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q9a">A. Physiological needs<input type="radio" id="q9a" name="q9" value="a" onclick="showAnswer('q9')"></label>
+                <label for="q9b">B. Safety needs<input type="radio" id="q9b" name="q9" value="b" onclick="showAnswer('q9')"></label>
+                <label for="q9c">C. Belongingness needs<input type="radio" id="q9c" name="q9" value="c" onclick="showAnswer('q9')"></label>
+                <label for="q9d">D. Esteem needs<input type="radio" id="q9d" name="q9" value="d" onclick="showAnswer('q9')"></label>
+            </div>
+            <div class="answer" id="answer-q9">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The slogan emphasizes protection, which aligns with safety needs in Maslow’s hierarchy.</p>
+            </div>
+        </div>
+        <div class="question" id="q10">
+            <p>10. A coffee brand uses a warm, inviting store design to attract customers. Which psychological factor is this targeting?</p>
+            <div class="options">
+                <label for="q10a">A. Attitudes<input type="radio" id="q10a" name="q10" value="a" onclick="showAnswer('q10')"></label>
+                <label for="q10b">B. Perception<input type="radio" id="q10b" name="q10" value="b" onclick="showAnswer('q10')"></label>
+                <label for="q10c">C. Learning<input type="radio" id="q10c" name="q10" value="c" onclick="showAnswer('q10')"></label>
+                <label for="q10d">D. Motivation<input type="radio" id="q10d" name="q10" value="d" onclick="showAnswer('q10')"></label>
+            </div>
+            <div class="answer" id="answer-q10">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The store design influences perception by creating a positive sensory experience through sight and ambiance.</p>
+            </div>
+        </div>
+        <div class="question" id="q11">
+            <p>11. A motivational seminar promotes “Achieve Your Dreams.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q11a">A. Safety needs<input type="radio" id="q11a" name="q11" value="a" onclick="showAnswer('q11')"></label>
+                <label for="q11b">B. Belongingness needs<input type="radio" id="q11b" name="q11" value="b" onclick="showAnswer('q11')"></label>
+                <label for="q11c">C. Esteem needs<input type="radio" id="q11c" name="q11" value="c" onclick="showAnswer('q11')"></label>
+                <label for="q11d">D. Self-actualization needs<input type="radio" id="q11d" name="q11" value="d" onclick="showAnswer('q11')"></label>
+            </div>
+            <div class="answer" id="answer-q11">
+                <p><strong>Correct Answer: D</strong></p>
+                <p><strong>Explanation:</strong> The focus on achieving dreams aligns with self-actualization needs, emphasizing personal growth and fulfillment.</p>
+            </div>
+        </div>
+        <div class="question" id="q12">
+            <p>12. A clothing brand promotes its eco-friendly products with “Wear the Change for a Greener Planet.” Which psychological factor is this campaign targeting to create a positive attitude?</p>
+            <div class="options">
+                <label for="q12a">A. Perception<input type="radio" id="q12a" name="q12" value="a" onclick="showAnswer('q12')"></label>
+                <label for="q12b">B. Attitudes<input type="radio" id="q12b" name="q12" value="b" onclick="showAnswer('q12')"></label>
+                <label for="q12c">C. Learning<input type="radio" id="q12c" name="q12" value="c" onclick="showAnswer('q12')"></label>
+                <label for="q12d">D. Motivation<input type="radio" id="q12d" name="q12" value="d" onclick="showAnswer('q12')"></label>
+            </div>
+            <div class="answer" id="answer-q12">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The campaign links the brand to environmental protection, a value consumers view positively, to foster favorable attitudes.</p>
+            </div>
+        </div>
+        <div class="question" id="q13">
+            <p>13. A tech company advertises its products as “Empowering Equality for All.” Which psychological factor is this campaign targeting to create a positive attitude?</p>
+            <div class="options">
+                <label for="q13a">A. Perception<input type="radio" id="q13a" name="q13" value="a" onclick="showAnswer('q13')"></label>
+                <label for="q13b">B. Attitudes<input type="radio" id="q13b" name="q13" value="b" onclick="showAnswer('q13')"></label>
+                <label for="q13c">C. Learning<input type="radio" id="q13c" name="q13" value="c" onclick="showAnswer('q13')"></label>
+                <label for="q13d">D. Motivation<input type="radio" id="q13d" name="q13" value="d" onclick="showAnswer('q13')"></label>
+            </div>
+            <div class="answer" id="answer-q13">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> The campaign associates the brand with social equity, a value that resonates positively, to shape consumer attitudes.</p>
+            </div>
+        </div>
+        <div class="question" id="q14">
+            <p>14. A tech company uses sleek, modern packaging for its products. Which psychological factor is this targeting?</p>
+            <div class="options">
+                <label for="q14a">A. Attitudes<input type="radio" id="q14a" name="q14" value="a" onclick="showAnswer('q14')"></label>
+                <label for="q14b">B. Perception<input type="radio" id="q14b" name="q14" value="b" onclick="showAnswer('q14')"></label>
+                <label for="q14c">C. Learning<input type="radio" id="q14c" name="q14" value="c" onclick="showAnswer('q14')"></label>
+                <label for="q14d">D. Motivation<input type="radio" id="q14d" name="q14" value="d" onclick="showAnswer('q14')"></label>
+            </div>
+            <div class="answer" id="answer-q14">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Sleek packaging influences perception by appealing to visual senses and creating a premium image.</p>
+            </div>
+        </div>
+        <div class="question" id="q15">
+            <p>15. A fashion brand promotes “Wear Your Confidence.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q15a">A. Physiological needs<input type="radio" id="q15a" name="q15" value="a" onclick="showAnswer('q15')"></label>
+                <label for="q15b">B. Safety needs<input type="radio" id="q15b" name="q15" value="b" onclick="showAnswer('q15')"></label>
+                <label for="q15c">C. Esteem needs<input type="radio" id="q15c" name="q15" value="c" onclick="showAnswer('q15')"></label>
+                <label for="q15d">D. Belongingness needs<input type="radio" id="q15d" name="q15" value="d" onclick="showAnswer('q15')"></label>
+            </div>
+            <div class="answer" id="answer-q15">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> The slogan emphasizes confidence, which aligns with esteem needs related to self-worth and recognition.</p>
+            </div>
+        </div>
+        <div class="question" id="q16">
+            <p>16. A water brand advertises “Stay Hydrated, Stay Healthy.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q16a">A. Physiological needs<input type="radio" id="q16a" name="q16" value="a" onclick="showAnswer('q16')"></label>
+                <label for="q16b">B. Safety needs<input type="radio" id="q16b" name="q16" value="b" onclick="showAnswer('q16')"></label>
+                <label for="q16c">C. Belongingness needs<input type="radio" id="q16c" name="q16" value="c" onclick="showAnswer('q16')"></label>
+                <label for="q16d">D. Esteem needs<input type="radio" id="q16d" name="q16" value="d" onclick="showAnswer('q16')"></label>
+            </div>
+            <div class="answer" id="answer-q16">
+                <p><strong>Correct Answer: A</strong></p>
+                <p><strong>Explanation:</strong> The focus on hydration addresses physiological needs, as water is essential for survival.</p>
+            </div>
+        </div>
+        <div class="question" id="q17">
+            <p>17. A social media campaign encourages users to share their fitness journey with a brand’s hashtag. Which need is this targeting?</p>
+            <div class="options">
+                <label for="q17a">A. Physiological needs<input type="radio" id="q17a" name="q17" value="a" onclick="showAnswer('q17')"></label>
+                <label for="q17b">B. Safety needs<input type="radio" id="q17b" name="q17" value="b" onclick="showAnswer('q17')"></label>
+                <label for="q17c">C. Belongingness needs<input type="radio" id="q17c" name="q17" value="c" onclick="showAnswer('q17')"></label>
+                <label for="q17d">D. Esteem needs<input type="radio" id="q17d" name="q17" value="d" onclick="showAnswer('q17')"></label>
+            </div>
+            <div class="answer" id="answer-q17">
+                <p><strong>Correct Answer: C</strong></p>
+                <p><strong>Explanation:</strong> Sharing on social media fosters a sense of community, appealing to belongingness needs.</p>
+            </div>
+        </div>
+        <div class="question" id="q18">
+            <p>18. A cereal brand uses bright neon packaging to attract kids. Which psychological factor is this targeting?</p>
+            <div class="options">
+                <label for="q18a">A. Attitudes<input type="radio" id="q18a" name="q18" value="a" onclick="showAnswer('q18')"></label>
+                <label for="q18b">B. Perception<input type="radio" id="q18b" name="q18" value="b" onclick="showAnswer('q18')"></label>
+                <label for="q18c">C. Learning<input type="radio" id="q18c" name="q18" value="c" onclick="showAnswer('q18')"></label>
+                <label for="q18d">D. Motivation<input type="radio" id="q18d" name="q18" value="d" onclick="showAnswer('q18')"></label>
+            </div>
+            <div class="answer" id="answer-q18">
+                <p><strong>Correct Answer: B</strong></p>
+                <p><strong>Explanation:</strong> Bright neon packaging targets perception by using visual stimuli to attract attention.</p>
+            </div>
+        </div>
+        <div class="question" id="q19">
+            <p>19. A sports brand advertises “Push Your Limits.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q19a">A. Physiological needs<input type="radio" id="q19a" name="q19" value="a" onclick="showAnswer('q19')"></label>
+                <label for="q19b">B. Safety needs<input type="radio" id="q19b" name="q19" value="b" onclick="showAnswer('q19')"></label>
+                <label for="q19c">C. Esteem needs<input type="radio" id="q19c" name="q19" value="c" onclick="showAnswer('q19')"></label>
+                <label for="q19d">D. Self-actualization needs<input type="radio" id="q19d" name="q19" value="d" onclick="showAnswer('q19')"></label>
+            </div>
+            <div class="answer" id="answer-q19">
+                <p><strong>Correct Answer: D</strong></p>
+                <p><strong>Explanation:</strong> The slogan encourages personal growth and achievement, aligning with self-actualization needs.</p>
+            </div>
+        </div>
+        <div class="question" id="q20">
+            <p>20. A motivational seminar promotes “Achieve Your Dreams.” Which need is this targeting?</p>
+            <div class="options">
+                <label for="q20a">A. Safety needs<input type="radio" id="q20a" name="q20" value="a" onclick="showAnswer('q20')"></label>
+                <label for="q20b">B. Belongingness needs<input type="radio" id="q20b" name="q20" value="b" onclick="showAnswer('q20')"></label>
+                <label for="q20c">C. Esteem needs<input type="radio" id="q20c" name="q20" value="c" onclick="showAnswer('q20')"></label>
+                <label for="q20d">D. Self-actualization needs<input type="radio" id="q20d" name="q20" value="d" onclick="showAnswer('q20')"></label>
+            </div>
+            <div class="answer" id="answer-q20">
+                <p><strong>Correct Answer: D</strong></p>
+                <p><strong>Explanation:</strong> The focus on achieving dreams aligns with self-actualization needs, emphasizing personal growth and fulfillment.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer(questionId) {
+            const answerDiv = document.getElementById(`answer-${questionId}`);
+            answerDiv.classList.add('show');
+        }
+    </script>
+</body>
+</html>
