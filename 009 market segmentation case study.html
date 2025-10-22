@@ -1,0 +1,137 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Segmentation, Targeting, and Positioning Case Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2, h3, h4 {
+            text-align: center;
+        }
+        .case-section {
+            margin-bottom: 20px;
+        }
+        .case-section h3 {
+            margin-top: 20px;
+        }
+        .questions {
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question p {
+            margin: 5px 0;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        @media print {
+            body {
+                margin: 20px;
+            }
+            .question {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Case Study: GreenWave Fitness Expansion Strategy</h1>
+    <h2>Chapter 9: Market Segmentation, Targeting, and Positioning</h2>
+    <hr>
+
+    <div class="case-section">
+        <h3>Background</h3>
+        <p>GreenWave Fitness is a U.S.-based company that produces eco-friendly fitness equipment, such as yoga mats made from recycled materials and biodegradable resistance bands. Launched in 2018, the company has built a loyal customer base in urban areas like San Francisco and Seattle, generating $30 million in annual revenue through online sales and partnerships with boutique fitness studios. However, domestic growth is slowing due to competition from larger brands like Lululemon and budget alternatives from overseas manufacturers. To sustain growth, GreenWave is planning to expand its market reach within the U.S. by targeting new consumer segments.</p>
+        <p>The company’s marketing team is tasked with identifying and targeting new market segments to increase sales. GreenWave’s products appeal to environmentally conscious consumers, but the team believes there is untapped potential in other demographic and behavioral segments. The challenge is to segment the market effectively, select the most promising target markets, and position the brand to stand out against competitors.</p>
+    </div>
+
+    <div class="case-section">
+        <h3>The Challenge</h3>
+        <p>GreenWave’s marketing director, Sarah Lin, has identified several potential market segments based on the principles of market segmentation, targeting, and positioning. The team has gathered data on consumer preferences and market characteristics, which include:</p>
+        <ul>
+            <li><strong>Geographic Segmentation</strong>: Urban areas like New York and Los Angeles have high market density and demand for fitness products, while rural areas show lower demand but growing interest in home fitness. Climate also plays a role, as coastal regions prefer outdoor fitness activities, influencing product design (e.g., weather-resistant yoga mats).</li>
+            <li><strong>Demographic Segmentation</strong>: Millennials (ages 29–44) and Generation Z (ages 13–28) are key segments due to their interest in sustainability and fitness trends. High-income households spend more on premium eco-friendly products, while middle-income families seek affordable options. Single adults and couples with no children are more likely to invest in personal fitness equipment than families with young children.</li>
+            <li><strong>Psychographic Segmentation</strong>: Surveys reveal that consumers who value sustainability and wellness lifestyles are drawn to GreenWave’s brand. These consumers prioritize activities like yoga and eco-conscious living, aligning with GreenWave’s mission of “Fitness for a Healthier Planet.”</li>
+            <li><strong>Behavioral Segmentation</strong>: Heavy users of fitness equipment (e.g., daily yoga practitioners) seek durable, high-quality products, while light users (e.g., occasional exercisers) prioritize affordability. Brand loyalty is strong among eco-conscious consumers, who are likely to become repeat customers if GreenWave reinforces its sustainability benefits.</li>
+            <li><strong>Competitive Landscape</strong>: Competitors like Lululemon use differentiated marketing to target multiple segments (e.g., yoga enthusiasts and runners) with premium pricing, while budget brands use undifferentiated marketing to appeal to a broad audience with low-cost products.</li>
+        </ul>
+        <p>GreenWave’s leadership must decide whether to pursue undifferentiated marketing to reach a broad audience, differentiated marketing to target multiple segments with tailored marketing mixes, or concentrated marketing to focus on a niche segment like eco-conscious Millennials. Additionally, they need to develop a positioning strategy to differentiate GreenWave from competitors. For example, emphasizing product attributes (e.g., 100% recycled materials) or value (e.g., sustainable products at competitive prices) could appeal to specific segments.</p>
+    </div>
+
+    <div class="case-section">
+        <h3>Key Decisions Ahead</h3>
+        <ol>
+            <li><strong>Segment Selection</strong>: Which consumer segments (e.g., urban Millennials, high-income eco-conscious consumers, or rural light users) should GreenWave prioritize to maximize profitability and align with its marketing capabilities?</li>
+            <li><strong>Targeting Strategy</strong>: Should GreenWave adopt undifferentiated, differentiated, or concentrated marketing to reach its chosen segments, considering the trade-offs between production efficiencies and customer satisfaction?</li>
+            <li><strong>Positioning Strategy</strong>: How should GreenWave position its products to create a compelling value proposition, and which positioning strategy (value, product attributes, competitive, or product use) best differentiates it from competitors like Lululemon?</li>
+        </ol>
+        <p>With a $5 million budget for the expansion, GreenWave aims to increase revenue by 30% within two years. Missteps in segmentation or positioning could lead to wasted resources or loss of market share to competitors.</p>
+    </div>
+
+    <div class="questions">
+        <h3>Discussion Questions</h3>
+        <p>Apply concepts from Chapter 9 (Market Segmentation, Targeting, and Positioning) to answer the following questions in small groups or individually. Support your responses with evidence from the case and course materials.</p>
+        <div class="question">
+            <p><strong>1.</strong> Using geographic, demographic, psychographic, and behavioral segmentation, identify two potential target segments for GreenWave Fitness. Evaluate their size, purchasing power, and profitability, and recommend one segment to prioritize, explaining how it aligns with GreenWave’s marketing capabilities.</p>
+        </div>
+        <div class="question">
+            <p><strong>2.</strong> Compare undifferentiated, differentiated, and concentrated marketing strategies for GreenWave’s expansion. Which strategy would you recommend, and how does it balance production costs, customer satisfaction, and competitive pressures? Provide examples of how GreenWave could implement this strategy.</p>
+        </div>
+        <div class="question">
+            <p><strong>3.</strong> Develop a positioning strategy for GreenWave, choosing one of the four strategies (value, product attributes, competitive, or product use). Create a value proposition and explain how it differentiates GreenWave from competitors like Lululemon, using a positioning map concept to illustrate consumer perceptions.</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><strong>End of Case Study</strong></p>
+</body>
+</html>

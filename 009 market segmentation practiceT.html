@@ -1,0 +1,336 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Segmentation, Targeting, and Positioning Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .quiz-container {
+            column-count: 2;
+            column-gap: 40px;
+            column-rule: 1px solid #ccc;
+        }
+        .question {
+            margin-bottom: 15px;
+            break-inside: avoid;
+        }
+        .question p {
+            margin: 5px 0;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .answer-key {
+            margin-top: 20px;
+            column-count: 2;
+            column-gap: 40px;
+        }
+        .answer-key h3 {
+            margin-bottom: 10px;
+        }
+        .answer-key p {
+            margin: 5px 0;
+        }
+        hr {
+            margin: 20px 0;
+            break-after: always;
+        }
+        @media print {
+            .quiz-container, .answer-key {
+                column-count: 2;
+                column-gap: 40px;
+            }
+            .question {
+                break-inside: avoid;
+            }
+            body {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <h2>Chapter 9: Market Segmentation, Targeting, and Positioning</h2>
+    <hr>
+
+    <div class="quiz-container">
+        <div class="question">
+            <p><strong>1.</strong> What defines a market according to the chapter?</p>
+            <div class="options">
+                <p>a) A group with sufficient purchasing power, authority, and willingness to buy</p>
+                <p>b) A group of businesses producing similar products</p>
+                <p>c) A group of consumers with identical preferences</p>
+                <p>d) A group of retailers in a specific geographic area</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>2.</strong> How are consumer products distinguished from business products?</p>
+            <div class="options">
+                <p>a) Consumer products are for resale, while business products are for personal use.</p>
+                <p>b) Consumer products are bought for personal use, while business products are used in production or resale.</p>
+                <p>c) Consumer products are more expensive than business products.</p>
+                <p>d) Consumer products are only sold in urban areas.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>3.</strong> What is a target market?</p>
+            <div class="options">
+                <p>a) The entire market for a product</p>
+                <p>b) A segment of consumers most likely to purchase a particular item</p>
+                <p>c) A group of competitors in the same industry</p>
+                <p>d) A market with no purchasing power</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>4.</strong> Which is NOT a requirement for effective market segmentation?</p>
+            <div class="options">
+                <p>a) Significant in size and purchasing power</p>
+                <p>b) Profitable</p>
+                <p>c) Consistent with the firm’s marketing capabilities</p>
+                <p>d) Identical consumer preferences</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>5.</strong> What is geographic segmentation based on?</p>
+            <div class="options">
+                <p>a) Consumer lifestyles and values</p>
+                <p>b) Consumer locations</p>
+                <p>c) Consumer income levels</p>
+                <p>d) Consumer brand loyalty</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>6.</strong> Which geographic segmentation type focuses on the number of residents in a specific area?</p>
+            <div class="options">
+                <p>a) Market size</p>
+                <p>b) Market density</p>
+                <p>c) Climate</p>
+                <p>d) Region</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>7.</strong> How does climate affect geographic segmentation?</p>
+            <div class="options">
+                <p>a) It determines consumer income levels.</p>
+                <p>b) It influences consumer needs based on weather patterns.</p>
+                <p>c) It standardizes product preferences across regions.</p>
+                <p>d) It restricts market density.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>8.</strong> Which demographic variable includes segments like Millennials and Baby Boomers?</p>
+            <div class="options">
+                <p>a) Gender</p>
+                <p>b) Age</p>
+                <p>c) Ethnicity</p>
+                <p>d) Income</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>9.</strong> Which demographic variable considers family formation and household composition?</p>
+            <div class="options">
+                <p>a) Income and expenditure</p>
+                <p>b) Life cycle stages and household type</p>
+                <p>c) Ethnicity</p>
+                <p>d) Gender</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>10.</strong> How does income influence demographic segmentation?</p>
+            <div class="options">
+                <p>a) Higher income leads to more spending on food.</p>
+                <p>b) Higher income leads to more spending on recreation and education.</p>
+                <p>c) Income has no impact on consumer preferences.</p>
+                <p>d) Low income increases spending on luxury goods.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>11.</strong> What is psychographic segmentation based on?</p>
+            <div class="options">
+                <p>a) Consumer locations and climate</p>
+                <p>b) Consumer values and lifestyle factors</p>
+                <p>c) Consumer purchasing power</p>
+                <p>d) Consumer age and gender</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>12.</strong> How does psychographic segmentation complement other segmentation types?</p>
+            <div class="options">
+                <p>a) It replaces demographic segmentation.</p>
+                <p>b) It provides insights into consumer values and lifestyles.</p>
+                <p>c) It focuses solely on geographic data.</p>
+                <p>d) It eliminates the need for behavioral data.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>13.</strong> What does behavioral segmentation focus on?</p>
+            <div class="options">
+                <p>a) Consumer demographics like age and gender</p>
+                <p>b) Consumer behaviors like benefits sought and brand loyalty</p>
+                <p>c) Consumer locations and market density</p>
+                <p>d) Consumer income and expenditure patterns</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>14.</strong> Which behavioral segmentation form classifies consumers as heavy, moderate, or light users?</p>
+            <div class="options">
+                <p>a) Benefits sought</p>
+                <p>b) Usage rates</p>
+                <p>c) Brand loyalty</p>
+                <p>d) Market density</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>15.</strong> What is an example of brand loyalty in behavioral segmentation?</p>
+            <div class="options">
+                <p>a) Consumers choosing products based on price</p>
+                <p>b) American Airlines rewarding frequent flyers with free travel</p>
+                <p>c) Consumers seeking a child-free resort experience</p>
+                <p>d) Consumers living in urban areas</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>16.</strong> What is the main advantage of undifferentiated marketing?</p>
+            <div class="options">
+                <p>a) Targets multiple segments with different marketing mixes</p>
+                <p>b) Provides production efficiencies</p>
+                <p>c) Increases promotion costs</p>
+                <p>d) Focuses on niche markets</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>17.</strong> What is a disadvantage of differentiated marketing?</p>
+            <div class="options">
+                <p>a) Lower customer satisfaction</p>
+                <p>b) Higher production and promotion costs</p>
+                <p>c) Vulnerability to niche competitors</p>
+                <p>d) Limited revenue potential</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>18.</strong> What is another name for concentrated marketing?</p>
+            <div class="options">
+                <p>a) Mass marketing</p>
+                <p>b) Niche marketing</p>
+                <p>c) Demographic marketing</p>
+                <p>d) Geographic marketing</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>19.</strong> What does a positioning map illustrate?</p>
+            <div class="options">
+                <p>a) Consumer purchasing power</p>
+                <p>b) Consumer perceptions of competing products</p>
+                <p>c) Consumer geographic locations</p>
+                <p>d) Consumer income levels</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>20.</strong> Which positioning strategy highlights specific product features?</p>
+            <div class="options">
+                <p>a) Value</p>
+                <p>b) Product attributes</p>
+                <p>c) Competitive</p>
+                <p>d) Product use or application</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="answer-key">
+        <h3>Answer Key</h3>
+        <p>1. a</p>
+        <p>2. b</p>
+        <p>3. b</p>
+        <p>4. d</p>
+        <p>5. b</p>
+        <p>6. b</p>
+        <p>7. b</p>
+        <p>8. b</p>
+        <p>9. b</p>
+        <p>10. b</p>
+        <p>11. b</p>
+        <p>12. b</p>
+        <p>13. b</p>
+        <p>14. b</p>
+        <p>15. b</p>
+        <p>16. b</p>
+        <p>17. b</p>
+        <p>18. b</p>
+        <p>19. b</p>
+        <p>20. b</p>
+    </div>
+    <hr>
+    <p><strong>End of Quiz</strong></p>
+</body>
+</html>

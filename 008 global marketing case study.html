@@ -1,0 +1,136 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTech Innovations Global Expansion Case Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2, h3, h4 {
+            text-align: center;
+        }
+        .case-section {
+            margin-bottom: 20px;
+        }
+        .case-section h3 {
+            margin-top: 20px;
+        }
+        .questions {
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question p {
+            margin: 5px 0;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        @media print {
+            body {
+                margin: 20px;
+            }
+            .question {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Case Study: Global Expansion Strategy for EcoTech Innovations</h1>
+    <h2>Contemporary Marketing, Chapter 8: Global Marketing</h2>
+    <hr>
+
+    <div class="case-section">
+        <h3>Background</h3>
+        <p>EcoTech Innovations is a mid-sized U.S.-based company specializing in sustainable energy products, such as solar-powered portable chargers and eco-friendly battery systems. Founded in 2015, the company has established a strong domestic market presence through direct sales, e-commerce, and partnerships with major retailers like Best Buy and Walmart. With annual revenues exceeding $50 million, EcoTech has primarily focused on the U.S. market but now faces slowing growth due to market saturation and rising competition from low-cost Chinese imports.</p>
+        <p>In response to these challenges, EcoTech's leadership is exploring international expansion to tap into emerging markets with high demand for green technologies. The company's CEO, Dr. Elena Ramirez, has identified two promising regions: the European Union (EU) and Mexico (a key member of the USMCA). The EU offers a mature market with strong environmental regulations and consumer preference for sustainable products, while Mexico provides lower production costs and proximity to the U.S. supply chain. However, EcoTech lacks prior global experience, and the team must navigate complex trade agreements, cultural differences, and economic fluctuations.</p>
+    </div>
+
+    <div class="case-section">
+        <h3>The Challenge</h3>
+        <p>Dr. Ramirez has assembled a cross-functional team—including marketing, operations, and finance experts—to develop an entry strategy. Key considerations include:</p>
+        <ul>
+            <li><strong>Trade Agreements and Barriers</strong>: The EU's common currency (euro) and free flow of goods among member nations could simplify distribution, but strict environmental standards and potential tariffs on non-EU imports pose risks. In contrast, the USMCA eliminates most tariffs between the U.S., Mexico, and Canada, prohibits tariffs on digital products, and enforces stricter labor and environmental rules, which align with EcoTech's sustainability ethos but may increase compliance costs.</li>
+            <li><strong>Market Environment</strong>: In the EU, exchange rate stability with the euro reduces pricing volatility, but inadequate infrastructure in some Eastern European countries could hinder distribution. Culturally, EU consumers value social responsibility, but language barriers and varying religious attitudes (e.g., in more conservative member states) require careful adaptation of promotional messaging. In Mexico, political risks from ongoing regulatory changes necessitate a thorough political risk assessment (PRA), while the growing middle class offers expanded consumer choices through imports.</li>
+            <li><strong>Entry Options</strong>: The team debates low-risk exporting via an export management company (EMC) to test demand, versus higher-commitment strategies like joint ventures with local partners for localized production (subcontracting) or full acquisitions of existing facilities. Franchising is considered for retail outlets but raises concerns about brand control.</li>
+            <li><strong>Marketing Mix Adaptation</strong>: EcoTech's current "straight extension" approach—using the same solar charger design and "Power the Planet" slogan globally—may not suffice. Product adaptation (e.g., smaller chargers for urban EU commuters) or dual adaptation (adjusting both product and promotion for Mexican cultural preferences) could be necessary, alongside invented features like solar panels tailored to Mexico's sunny climate.</li>
+        </ul>
+        <p>Recent data shows U.S. service exports (including EcoTech's tech support) growing rapidly, but imports of cheaper Chinese alternatives have lowered prices and increased choices for consumers. Tariffs on Chinese semiconductors and electric vehicle components, imposed by the U.S., have indirectly benefited domestic firms like EcoTech but complicated global sourcing.</p>
+    </div>
+
+    <div class="case-section">
+        <h3>Key Decisions Ahead</h3>
+        <ol>
+            <li><strong>Market Selection</strong>: Prioritize the EU for its economic integration or Mexico for USMCA benefits and cost advantages?</li>
+            <li><strong>Entry Strategy</strong>: Opt for exporting (low cost, low risk) or a joint venture (shared risks, local expertise)?</li>
+            <li><strong>Adaptation Level</strong>: Stick with straight extension for economies of scale, or pursue product invention to exploit unique opportunities like Mexico's renewable energy incentives?</li>
+        </ol>
+        <p>The team has six months to finalize a plan, with a $10 million budget for initial rollout. Success could double EcoTech's revenue in three years, but missteps in cultural adaptation or political risks could damage the brand.</p>
+    </div>
+
+    <div class="questions">
+        <h3>Discussion Questions</h3>
+        <p>To apply concepts from Chapter 8 (Global Marketing), consider these questions in small groups or individually. Support your responses with evidence from the case and course materials.</p>
+        <div class="question">
+            <p><strong>1.</strong> Using the five major factors influencing the global marketing environment (economic, social-cultural, political/legal/regulatory, technological, and competitive), evaluate the risks and opportunities for EcoTech in the EU versus Mexico. Recommend one market for initial entry and justify how infrastructure, exchange rates, and political risk assessments would impact distribution and pricing strategies.</p>
+        </div>
+        <div class="question">
+            <p><strong>2.</strong> Compare at least three of the six alternative strategies for entering foreign markets (e.g., exporting, subcontracting, joint ventures) in terms of advantages, disadvantages, and appropriateness for EcoTech. Which strategy would you propose, and how would it balance control, costs, and local knowledge to avoid common pitfalls like inadequate quality from partners?</p>
+        </div>
+        <div class="question">
+            <p><strong>3.</strong> Assess how EcoTech should adapt its marketing mix (product, promotion, price, place) for the selected market. Would a straight extension, product adaptation, dual adaptation, or product invention approach be most effective? Explain how this choice supports economies of scale while addressing cultural values and competitive forces, drawing on examples like the role of the WTO or USMCA in reducing trade barriers.</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><strong>End of Case Study</strong></p>
+</body>
+</html>

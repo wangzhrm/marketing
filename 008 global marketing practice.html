@@ -1,0 +1,300 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Marketing Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .quiz-container {
+            column-count: 2;
+            column-gap: 40px;
+            column-rule: 1px solid #ccc;
+        }
+        .question {
+            margin-bottom: 15px;
+            break-inside: avoid;
+        }
+        .question p {
+            margin: 5px 0;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        hr {
+            margin: 20px 0;
+            break-after: always;
+        }
+        @media print {
+            .quiz-container {
+                column-count: 2;
+                column-gap: 40px;
+            }
+            .question {
+                break-inside: avoid;
+            }
+            body {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chapter 8: Global Marketing Quiz</h1>
+    <hr>
+
+    <div class="quiz-container">
+        <div class="question">
+            <p><strong>1.</strong> What is the primary difference between exporting and importing in global trade?</p>
+            <div class="options">
+                <p>a) Exporting involves selling services, while importing involves buying goods.</p>
+                <p>b) Exporting is marketing domestically produced goods abroad, while importing is purchasing foreign goods.</p>
+                <p>c) Exporting requires tariffs, while importing does not.</p>
+                <p>d) Exporting is restricted to agricultural products, while importing includes services.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>2.</strong> Which sector has seen an increase in the share of U.S. exports?</p>
+            <div class="options">
+                <p>a) Agricultural products</p>
+                <p>b) Manufacturing</p>
+                <p>c) Service industries</p>
+                <p>d) Construction</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>3.</strong> What is one benefit of importing goods and services to the U.S.?</p>
+            <div class="options">
+                <p>a) Reduced access to resources</p>
+                <p>b) Increased consumer prices</p>
+                <p>c) Expanded choices for consumers</p>
+                <p>d) Decreased economic growth</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>4.</strong> What is the purpose of tariffs in global trade?</p>
+            <div class="options">
+                <p>a) To eliminate trade restrictions</p>
+                <p>b) To tax imported goods</p>
+                <p>c) To promote free trade</p>
+                <p>d) To standardize currency exchange</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>5.</strong> How many member countries does the World Trade Organization (WTO) have?</p>
+            <div class="options">
+                <p>a) 124</p>
+                <p>b) 166</p>
+                <p>c) 180</p>
+                <p>d) 200</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>6.</strong> Which of the following is a key function of the World Trade Organization?</p>
+            <div class="options">
+                <p>a) Enforcing environmental regulations</p>
+                <p>b) Mediating trade disputes</p>
+                <p>c) Setting global currency rates</p>
+                <p>d) Regulating labor laws</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>7.</strong> What is a characteristic of the European Union (EU) as a multinational economic community?</p>
+            <div class="options">
+                <p>a) It prohibits the free flow of goods among members.</p>
+                <p>b) It has adopted a common currency.</p>
+                <p>c) It restricts worker mobility.</p>
+                <p>d) It focuses solely on agricultural trade.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>8.</strong> What agreement replaced the North American Free Trade Agreement (NAFTA)?</p>
+            <div class="options">
+                <p>a) European Union (EU)</p>
+                <p>b) United States–Mexico–Canada Agreement (USMCA)</p>
+                <p>c) World Trade Organization (WTO)</p>
+                <p>d) Trans-Pacific Partnership (TPP)</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>9.</strong> Which of the following is a benefit of the USMCA?</p>
+            <div class="options">
+                <p>a) Increased tariffs on digital products</p>
+                <p>b) Strengthened labor laws</p>
+                <p>c) Reduced GDP for member nations</p>
+                <p>d) Decreased trade among members</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>10.</strong> What does infrastructure include in the context of the international marketing environment?</p>
+            <div class="options">
+                <p>a) Cultural values and traditions</p>
+                <p>b) Transportation, communications, and utilities</p>
+                <p>c) Political ideologies</p>
+                <p>d) Competitive strategies</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>11.</strong> How do exchange rate fluctuations impact global marketing?</p>
+            <div class="options">
+                <p>a) They standardize product pricing globally.</p>
+                <p>b) They affect the prices of imported goods.</p>
+                <p>c) They eliminate trade barriers.</p>
+                <p>d) They restrict cultural adaptations.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>12.</strong> What should marketers study before entering a foreign market to address the social-cultural environment?</p>
+            <div class="options">
+                <p>a) Currency exchange rates</p>
+                <p>b) Language, education, and social values</p>
+                <p>c) Tariff regulations</p>
+                <p>d) Manufacturing processes</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>13.</strong> What is a political risk assessment (PRA) used for?</p>
+            <div class="options">
+                <p>a) Evaluating the cultural fit of a product</p>
+                <p>b) Assessing political risks in markets</p>
+                <p>c) Determining exchange rates</p>
+                <p>d) Setting environmental standards</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>14.</strong> How does the international technological environment aid global marketing?</p>
+            <div class="options">
+                <p>a) It restricts access to new markets.</p>
+                <p>b) It connects businesses globally via the internet.</p>
+                <p>c) It increases trade barriers.</p>
+                <p>d) It limits product customization.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>15.</strong> What is an advantage of the exporting strategy for entering foreign markets?</p>
+            <div class="options">
+                <p>a) High control over product marketing</p>
+                <p>b) Low cost and low risk</p>
+                <p>c) Requires significant resources</p>
+                <p>d) Involves complex local operations</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>16.</strong> What role does an export management company (EMC) play?</p>
+            <div class="options">
+                <p>a) It manufactures goods for export.</p>
+                <p>b) It provides expertise in locating foreign buyers and managing paperwork.</p>
+                <p>c) It sets tariffs for imported goods.</p>
+                <p>d) It regulates foreign licensing agreements.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>17.</strong> What is a disadvantage of franchising and licensing as a market entry strategy?</p>
+            <div class="options">
+                <p>a) High capital investment required</p>
+                <p>b) Inadequate quality from partners could damage brand</p>
+                <p>c) Lack of access to foreign markets</p>
+                <p>d) Limited knowledge of new markets</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>18.</strong> Which strategy involves assigning production to local companies to avoid cultural and regulatory mistakes?</p>
+            <div class="options">
+                <p>a) Exporting</p>
+                <p>b) Subcontracting</p>
+                <p>c) Acquisitions</p>
+                <p>d) Joint ventures</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>19.</strong> Which marketing mix strategy involves using the same product and message globally?</p>
+            <div class="options">
+                <p>a) Product adaptation</p>
+                <p>b) Straight extension</p>
+                <p>c) Dual adaptation</p>
+                <p>d) Product invention</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>20.</strong> Why might a firm choose a product invention strategy?</p>
+            <div class="options">
+                <p>a) To maintain high production costs</p>
+                <p>b) To standardize products globally</p>
+                <p>c) To take advantage of unique foreign market opportunities</p>
+                <p>d) To limit market entry options</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <p><strong>End of Quiz</strong></p>
+</body>
+</html>
