@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunnyBrew Co.: The Functional Fever</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind to use a serif font (like Georgia/Times) for the academic look
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Using a serif font for the body text
+                        serif: ['Georgia', 'Times New Roman', 'serif'],
+                        // Inter for sans-serif fallbacks/headers if needed, but primarily using serif
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles to refine the HBS case look */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+        .case-container {
+            line-height: 1.65;
+            letter-spacing: 0.005em;
+        }
+        .chapter-heading {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #222;
+            font-size: 1.5rem; /* Larger than default H2 */
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="case-container max-w-4xl mx-auto bg-white p-6 md:p-10 shadow-lg border border-gray-200">
+
+        <!-- Case Study Title Block (Academic Style) -->
+        <header class="text-center mb-10 border-b pb-4">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-2 tracking-tight">
+                SunnyBrew Co.: The Functional Fever
+            </h1>
+            <p class="text-xl text-gray-500 italic">
+                (Narrative Edition for Strategic Analysis)
+            </p>
+        </header>
+
+        <!-- Chapter 1 -->
+        <h2 class="chapter-heading">Chapter 1: The Cold Feeling</h2>
+
+        <!-- Image Container: Floating, smaller (w-1/3 or w-1/4 on larger screens) with right margin -->
+        <div class="float-left w-full sm:w-1/3 md:w-1/4 mr-6 mb-4 border border-gray-300 p-1 rounded-lg bg-gray-50 shadow-sm">
+            <img 
+                src="https://tonysew.wordpress.com/wp-content/uploads/2025/11/8e8cb8a1-6407-456f-8a93-44a8fbb03f95-2.png" 
+                alt="Performance and Market Gap Analysis" 
+                class="w-full h-auto object-contain"
+                onerror="this.onerror=null; this.src='https://placehold.co/400x150/cccccc/333333?text=Image+Not+Available';"
+            >
+            <!-- Figcaption has been removed -->
+        </div>
+
+        <!-- Chapter 1 text wraps around the floating image -->
+        <p class="text-lg mb-4">The nice smell of coffee usually filled Jane Chen's corner office. Jane, the CEO of SunnyBrew Co., had every reason to feel proud. She had built a great company with <b>80 stores</b> spread across big US cities like New York, Chicago, and Miami. Just two years ago, their success felt guaranteed, with revenue climbing by a strong <b>+12%</b>.</p>
+        <p class="text-lg mb-4">But this morning, the pride was replaced by a knot of anxiety. The annual report on her desk held a disappointing figure: total sales growth had slowed to a terrible <b>+3%</b>. This was a failure to seize market opportunity.</p>
+        <p class="text-lg mb-4">Jane looked at the customer feedback summary. It confirmed her fear that being simply "nice" was no longer enough. The same complaints kept repeating: “The line is always too long at busy times,” and, “I don’t want a coffee that takes 10 minutes to make—I need a quick breakfast to go.” The highly manual, customizable preparation process that was once their signature was now an anchor, turning away the routine-driven <b>office workers</b> who needed rapid, grab-and-go speed. This <b>operational flaw</b> was hurting the business more than any high price could.</p>
+
+        <!-- Use a clear-both div to ensure the next chapter heading starts below the image -->
+        <div class="clear-both"></div>
+        
+        <!-- Chapter 2 -->
+        <h2 class="chapter-heading">Chapter 2: The Wellness Whisper</h2>
+        <p class="text-lg mb-4">Later that morning, Jane called her Head of Marketing, Alex, into her office to review the competitive landscape.</p>
+        <p class="text-lg mb-4">“Alex, look at this market report. We’re losing the most valuable segment—the health-conscious crowd,” Jane said, tapping a graph showing younger customers shifting their spending habits.</p>
+        <p class="text-lg mb-4">Alex pulled up a slide detailing the competitors. “It’s the <b>‘Functional Fever,’</b> Jane. It’s everywhere. Our <b>Health-Conscious Millennials</b> aren't just asking for caffeine anymore; they demand a specific result. They view a $7 coffee as a <b>wellness purchase</b>, not just a beverage. They’re trying new drinks that promise better focus, like the ones with Lion's Mane mushroom, or a coffee with collagen for skin health, or even CBD cold brews to help with stress.”</p>
+        <p class="text-lg mb-4">“So, they want their coffee to do something,” Jane summarized. “They’re demanding specific health results. But what about the other basics? We are vulnerable in three critical areas where customers can easily walk across the street to a competitor.”</p>
+        <p class="text-lg mb-4">Alex nodded grimly. “The demands are getting more difficult, Jane. For instance, the crowds in Seattle and Austin are furious about our plastic cups. They are constantly asking for <b>sustainable and eco-friendly packaging</b>. We can’t get away with non-recyclable materials anymore—it’s a social media PR disaster waiting to happen. And the plant-based demand? For the <b>University Students</b>, oat milk isn't just an alternative anymore; it's what they expect as the default.”</p>
+        <p class="text-lg mb-4">Jane looked out the window. SunnyBrew, once a market leader, now looked slow, behind the times, and struggling to meet the core values of its most profitable segments compared to the functional and eco-conscious rivals. The <b>threat of substitutes</b>—from protein shakes to functional teas—had never been higher.</p>
+
+        <!-- Chapter 3 -->
+        <h2 class="chapter-heading">Chapter 3: The Mandate</h2>
+        <p class="text-lg mb-4">Jane gathered her executive team. The mood was serious.</p>
+        <p class="text-lg mb-4">“We can’t pretend we’re a small café anymore. Our business model is obsolete,” she began, her voice firm. “We are losing the busy office workers because of our agonizingly slow service, and we are losing the wellness segment because we don’t offer them anything modern.”</p>
+        <p class="text-lg mb-4">She leaned forward. “The board’s goal is <b>non-negotiable</b>. We must drive an overall <b>15% increase in annual revenue</b> in the next twelve months. This isn't a minor menu update; it has to be a game-changer.”</p>
+        <p class="text-lg mb-4">Jane stood up and walked to the whiteboard. "This is a product that must solve our current problems. Whatever you propose, it must adhere to four <b>non-negotiable rules</b> derived from our market analysis. Firstly, it must be <b>fast to prepare</b>—our baristas need to serve it in seconds to fix the operational bottleneck. Secondly, it must be very <b>profitable</b> with high margins to justify the investment across all 80 stores. Third, it absolutely must be <b>functional</b>, directly addressing a health or wellness trend, giving customers a specific benefit like focus or gut health. And finally, it must be <b>sustainable</b>, using eco-friendly packaging that our core markets will approve of."</p>
+        <p class="text-lg mb-4">"Now for the open space," Jane added, pointing to the blank area on the board. "I don't want a full Marketing Mix yet. Your team's immediate task is to define the strategic core: I need a complete <b>Segmentation, Targeting, and Positioning (STP) strategy</b>, and a fully justified <b>Product concept</b> that perfectly satisfies those four non-negotiable rules. Define the product, define its customer, and tell me why that combination will save SunnyBrew."</p>
+        <p class="text-lg font-bold pt-4 text-center">
+            The task is clear. The clock is ticking. The future of SunnyBrew Co. rests on your proposed solution.
+        </p>
+
+    </div>
+
+</body>
+</html>
