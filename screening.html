@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SunnyBrew Co. – New Product Screening Checklist</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 17px;
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+        .intro {
+            background: #e8f4f8;
+            padding: 22px;
+            border-radius: 12px;
+            border-left: 6px solid #3498db;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .checklist {
+            display: grid;
+            gap: 20px;
+        }
+        .check-item {
+            background: #f9f9fb;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        .check-item:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .check-title {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .check-title::before {
+            content: "✔";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .check-explain {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #95a5a6;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        @media print {
+            body { background: white; padding: 20px; }
+            .container { box-shadow: none; padding: 25px; }
+            .check-item { border: 1px solid #ccc; page-break-inside: avoid; }
+            .check-item:hover { box-shadow: none; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>SunnyBrew Co.</h1>
+    <p class="subtitle">New Product Screening Checklist</p>
+
+    <div class="intro">
+        <p><strong>Developed from 10+ years of product launches</strong> — this checklist helps us quickly filter ideas and avoid costly mistakes. Every “Yes” increases the chance of success. Every “No” triggers a pause or rejection.</p>
+    </div>
+
+    <div class="checklist">
+
+        <div class="check-item">
+            <div class="check-title">Fits Core Brand Identity</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> Past failures (e.g., “SunnyBrew Protein Shakes”) confused customers. Our brand = <em>premium coffee experience</em>. New products must feel like a natural extension — not a random add-on.
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Solves a Real Customer Pain Point</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> “Matcha Energy Balls” flopped because customers didn’t need another snack. But “15-Second Breakfast Latte” succeeded — it solved <em>long morning lines</em> and <em>hunger</em> in one go.
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Feasible with Current Supply Chain</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> We once approved a “Fresh Coconut Cold Brew” — but couldn’t source coconuts reliably. Now we ask: <em>Can our existing vendors deliver this ingredient at scale?</em>
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Gross Margin ≥ 55%</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> Low-margin items (like $1 pastries) drain profits. High-margin drinks (e.g., oat milk lattes) fund growth. We learned: <em>never launch below 55% margin</em>.
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Can Be Made in Under 90 Seconds</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> Speed = survival in peak hours. A 3-minute “superfood bowl” caused chaos. Now: <em>if it slows the line, it’s out</em>.
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Uses Recyclable or Reusable Packaging</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> Customer backlash killed our plastic bottled iced tea. Now we require <em>zero single-use plastic</em> — aluminum, glass, or reusable only.
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Clear Unique Selling Point (USP)</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> “Just another iced latte” gets ignored. But “World’s First Collagen Cold Brew” went viral. We ask: <em>What makes this undeniably different?</em>
+            </div>
+        </div>
+
+        <div class="check-item">
+            <div class="check-title">Testable in 1 Store Within 30 Days</div>
+            <div class="check-explain">
+                <strong>Why it matters:</strong> Big ideas like “Coffee Subscription Boxes” failed nationally before local testing. Now: <em>if we can’t pilot in one store fast, we don’t proceed</em>.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p><strong>Rule:</strong> An idea must pass <strong>at least 6 out of 8</strong> checks to move to Business Analysis.<br>
+        This checklist has reduced failed launches by <strong>78%</strong> since 2019.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

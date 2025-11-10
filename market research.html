@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SunnyBrew Co. – Business Analysis Market Intelligence</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 17px;
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: "📊";
+            margin-right: 12px;
+            font-size: 28px;
+        }
+        .data-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .data-card.secondary {
+            border-left-color: #9b59b6;
+        }
+        .data-card.primary {
+            border-left-color: #27ae60;
+        }
+        .source {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .highlight {
+            background: #fffacd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .insight {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2e7d32;
+            border-left: 4px solid #4caf50;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+        @media print {
+            body { padding: 20px; background: white; }
+            .container { box-shadow: none; }
+            .data-card { page-break-inside: avoid; }
+            .insight { background: #f1f8e9; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>SunnyBrew Co.</h1>
+    <p class="subtitle">Business Analysis – Market Intelligence Report</p>
+
+    <!-- SECTION 1: SECONDARY DATA -->
+    <div class="section">
+        <h2 class="section-title">Section 1: Secondary Market Data</h2>
+        <p><em>Collected from industry reports, government statistics, and external consultants.</em></p>
+
+        <div class="data-card secondary">
+            <strong>U.S. Coffee Shop Industry (2024–2025)</strong>
+            <ul>
+                <li>Total market size: <span class="highlight">$48.7 billion</span></li>
+                <li>Expected CAGR (2025–2030): <span class="highlight">+5.1%</span></li>
+                <li>Functional beverages (e.g., protein, adaptogens) growing at <span class="highlight">+18%</span> annually</li>
+                <li>Grab-and-go food sales up <span class="highlight">22%</span> in urban chains</li>
+            </ul>
+            <div class="source">Source: IBISWorld Coffee & Snack Shops Report, 2025</div>
+        </div>
+
+        <div class="data-card secondary">
+            <strong>Consumer Trends in Urban Areas</strong>
+            <ul>
+                <li><span class="highlight">68%</span> of 25–40-year-olds want <strong>healthier breakfast options</strong> under 300 calories</li>
+                <li><span class="highlight">74%</span> prefer <strong>recyclable or reusable packaging</strong></li>
+                <li><span class="highlight">41%</span> willing to pay <strong>20% premium</strong> for “functional” coffee (energy, focus, immunity)</li>
+            </ul>
+            <div class="source">Source: Nielsen Urban Consumer Insights, Q1 2025</div>
+        </div>
+
+        <div class="data-card secondary">
+            <strong>Government & Economic Data</strong>
+            <ul>
+                <li>Average urban foot traffic near offices: <span class="highlight">+12%</span> on weekdays vs. 2023</li>
+                <li>Inflation on dairy: <span class="highlight">+9%</span>; plant-based milk: <span class="highlight">+3%</span></li>
+                <li>USDA: Oat milk now <span class="highlight">#2</span> non-dairy milk in foodservice</li>
+            </ul>
+            <div class="source">Source: U.S. Bureau of Labor Statistics & USDA, 2025</div>
+        </div>
+
+        <div class="insight">
+            Opportunity: High-growth segments = <strong>functional drinks + grab-and-go + eco-packaging</strong>
+        </div>
+    </div>
+
+    <!-- SECTION 2: PRIMARY DATA -->
+    <div class="section">
+        <h2 class="section-title">Section 2: Primary Market Research</h2>
+        <p><em>Collected by SunnyBrew and its marketing research consultants in 2025.</em></p>
+
+        <div class="data-card primary">
+            <strong>In-Store Customer Survey (1,200 respondents across 12 stores)</strong>
+            <ul>
+                <li><span class="highlight">82%</span> say morning lines are “too long” (over 4 minutes)</li>
+                <li><span class="highlight">67%</span> would buy a <strong>pre-made protein coffee</strong> if under $6</li>
+                <li><span class="highlight">59%</span> want <strong>plant-based breakfast items</strong> under 90 seconds</li>
+                <li>Top requested add-ins: <strong>collagen, L-theanine, mushroom extract</strong></li>
+            </ul>
+            <div class="source">Source: SunnyBrew Customer Intercept Survey, March 2025</div>
+        </div>
+
+        <div class="data-card primary">
+            <strong>Focus Groups with Loyal Customers (6 groups, 48 participants)</strong>
+            <ul>
+                <li>Strong interest in <strong>“all-in-one” morning solutions</strong>: drink + nutrition + speed</li>
+                <li>Frustration with <strong>plastic waste</strong> — prefer aluminum cans or reusable cups</li>
+                <li>Willing to join <strong>subscription for weekly office delivery</strong></li>
+            </ul>
+            <div class="source">Source: Insight Partners Focus Groups, April 2025</div>
+        </div>
+
+        <div class="data-card primary">
+            <strong>Social Media & App Sentiment Analysis (50,000+ mentions)</strong>
+            <ul>
+                <li><span class="highlight">71%</span> positive sentiment around <strong>cold brew</strong></li>
+                <li><span class="highlight">43%</span> of complaints = “need healthier pastries”</li>
+                <li>Trending hashtags: <strong>#CoffeeWithBenefits, #EcoCoffee, #MorningFuel</strong></li>
+            </ul>
+            <div class="source">Source: Brandwatch AI Analysis, Jan–May 2025</div>
+        </div>
+
+        <div class="insight">
+            Customer Demand: <strong>Fast + Healthy + Functional + Sustainable</strong> = Winning Formula
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Final Task for Students:</strong><br>
+        Using this market intelligence, <strong>select and justify ONE new product idea</strong> that best fits:<br>
+        • High market potential<br>
+        • Strong competitive edge<br>
+        • Alignment with SunnyBrew’s capabilities</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Innovativeness Scale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .scale-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        .statement {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .likert-options label {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .likert-options input[type="radio"] {
+            margin-right: 5px;
+        }
+        #calculate-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #calculate-btn:hover {
+            background-color: #0056b3;
+        }
+        #result-box {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #28a745;
+            background-color: #e2f0e8;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1em;
+            display: none; /* Initially hidden */
+        }
+        .consumer-type {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📱 Consumer Innovativeness Scale (Smartphones)</h1>
+    <p>Please indicate how much you **agree** or **disagree** with the following statements regarding **Smartphones**.</p>
+    <form id="innovativeness-scale">
+        <div class="scale-item">
+            <div class="statement">1. In general, I am the first in my circle of friends to buy a new smartphone when it appears.</div>
+            <div class="likert-options">
+                <label><input type="radio" name="q1" value="1" required> Strongly Disagree (1)</label>
+                <label><input type="radio" name="q1" value="2"> Disagree (2)</label>
+                <label><input type="radio" name="q1" value="3"> Neither Agree nor Disagree (3)</label>
+                <label><input type="radio" name="q1" value="4"> Agree (4)</label>
+                <label><input type="radio" name="q1" value="5"> Strongly Agree (5)</label>
+            </div>
+        </div>
+
+        <div class="scale-item">
+            <div class="statement">2. If I heard that a new smartphone was available in the store, I would be interested enough to buy it.</div>
+            <div class="likert-options">
+                <label><input type="radio" name="q2" value="1" required> Strongly Disagree (1)</label>
+                <label><input type="radio" name="q2" value="2"> Disagree (2)</label>
+                <label><input type="radio" name="q2" value="3"> Neither Agree nor Disagree (3)</label>
+                <label><input type="radio" name="q2" value="4"> Agree (4)</label>
+                <label><input type="radio" name="q2" value="5"> Strongly Agree (5)</label>
+            </div>
+        </div>
+        
+        <div class="scale-item">
+            <div class="statement">3. Compared to my friends, I own many smartphones.</div>
+            <div class="likert-options">
+                <label><input type="radio" name="q3" value="1" required> Strongly Disagree (1)</label>
+                <label><input type="radio" name="q3" value="2"> Disagree (2)</label>
+                <label><input type="radio" name="q3" value="3"> Neither Agree nor Disagree (3)</label>
+                <label><input type="radio" name="q3" value="4"> Agree (4)</label>
+                <label><input type="radio" name="q3" value="5"> Strongly Agree (5)</label>
+            </div>
+        </div>
+
+        <div class="scale-item">
+            <div class="statement">4. I will not buy a new smartphone until I have tested it.</div>
+            <div class="likert-options">
+                <label><input type="radio" name="q4" value="1" required> Strongly Disagree (1)</label>
+                <label><input type="radio" name="q4" value="2"> Disagree (2)</label>
+                <label><input type="radio" name="q4" value="3"> Neither Agree nor Disagree (3)</label>
+                <label><input type="radio" name="q4" value="4"> Agree (4)</label>
+                <label><input type="radio" name="q4" value="5"> Strongly Agree (5)</label>
+            </div>
+        </div>
+
+        <div class="scale-item">
+            <div class="statement">5. I do not like to buy smartphones before other people do.</div>
+            <div class="likert-options">
+                <label><input type="radio" name="q5" value="1" required> Strongly Disagree (1)</label>
+                <label><input type="radio" name="q5" value="2"> Disagree (2)</label>
+                <label><input type="radio" name="q5" value="3"> Neither Agree nor Disagree (3)</label>
+                <label><input type="radio" name="q5" value="4"> Agree (4)</label>
+                <label><input type="radio" name="q5" value="5"> Strongly Agree (5)</label>
+            </div>
+        </div>
+        
+        <div class="scale-item">
+            <div class="statement">6. If I heard that a new smartphone was available, I would not be interested enough to buy it.</div>
+            <div class="likert-options">
+                <label><input type="radio" name="q6" value="1" required> Strongly Disagree (1)</label>
+                <label><input type="radio" name="q6" value="2"> Disagree (2)</label>
+                <label><input type="radio" name="q6" value="3"> Neither Agree nor Disagree (3)</label>
+                <label><input type="radio" name="q6" value="4"> Agree (4)</label>
+                <label><input type="radio" name="q6" value="5"> Strongly Agree (5)</label>
+            </div>
+        </div>
+
+        <button type="submit" id="calculate-btn">Determine My Consumer Type</button>
+    </form>
+
+    <div id="result-box">
+        <p>Based on your responses, your total Innovativeness Score is: <span id="score-value"></span> / 30</p>
+        <p>Your predicted consumer type for Smartphones is:</p>
+        <div class="consumer-type" id="consumer-type-result"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('innovativeness-scale').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop the form from submitting normally
+
+        let totalScore = 0;
+        let allAnswered = true;
+        const form = event.target;
+
+        // Scores for Positive Items (Q1, Q2, Q3) are direct
+        for (let i = 1; i <= 3; i++) {
+            const selected = form.elements['q' + i].value;
+            if (!selected) {
+                allAnswered = false;
+                break;
+            }
+            totalScore += parseInt(selected);
+        }
+
+        // Scores for Negative/Reverse-Coded Items (Q4, Q5, Q6) are flipped (6 - value)
+        // A 'Strongly Disagree' (1) becomes 5; 'Strongly Agree' (5) becomes 1. Formula: 6 - value.
+        for (let i = 4; i <= 6; i++) {
+            const selected = form.elements['q' + i].value;
+            if (!selected) {
+                allAnswered = false;
+                break;
+            }
+            // Reverse-coding logic: 6 - value
+            totalScore += (6 - parseInt(selected));
+        }
+
+        if (!allAnswered) {
+            alert("Please answer all six questions before calculating your score.");
+            return;
+        }
+
+        // Display Total Score
+        document.getElementById('score-value').textContent = totalScore;
+
+        let consumerType = "";
+
+        // Determine Consumer Type (Based on a 6-item scale, the range is 6 to 30)
+        // The cutoffs are illustrative and based on roughly dividing the normal distribution (bell curve) 
+        // into the 5 categories across the score range (24 points total).
+        if (totalScore >= 26) {
+            consumerType = "Innovator (Score 26-30)";
+        } else if (totalScore >= 21) {
+            consumerType = "Early Adopter (Score 21-25)";
+        } else if (totalScore >= 15) {
+            consumerType = "Early Majority (Score 15-20)";
+        } else if (totalScore >= 10) {
+            consumerType = "Late Majority (Score 10-14)";
+        } else {
+            consumerType = "Laggard (Score 6-9)";
+        }
+
+        // Display Result
+        document.getElementById('consumer-type-result').textContent = consumerType;
+        document.getElementById('result-box').style.display = 'block';
+
+        // Scroll to the result
+        document.getElementById('result-box').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
