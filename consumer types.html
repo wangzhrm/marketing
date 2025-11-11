@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consumer Type Questionnaire</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #fff; color: #333; margin:0; padding:20px; }
+  h1 { text-align: center; margin-bottom: 10px; }
+  p.lead { text-align:center; margin-bottom: 30px; }
+  form { max-width: 800px; margin: 0 auto; }
+  .question { margin-bottom: 25px; }
+  .question label { display:block; margin-bottom:8px; font-weight: 600; }
+  input[type=range] { width:100%; }
+  .scale-labels { display:flex; justify-content: space-between; font-size: 0.9em; margin-top:4px; }
+  button { background:#007bff; color:#fff; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; font-size: 16px; }
+  button:hover { background:#0056b3; }
+  #result { margin-top: 30px; text-align:left; font-weight: 600; font-size: 1.1em; max-width: 800px; margin-left:auto; margin-right:auto; }
+  .feature-section { margin-top: 10px; font-weight: normal; }
+  .feature-section h3 { margin-bottom: 6px; font-size: 1em; color:#007bff; }
+  .feature-section p { margin: 4px 0; font-size: 0.95em; }
+</style>
+</head>
+<body>
+
+<h1>Consumer Preference Questionnaire</h1>
+<p class="lead">Slide the bar to indicate your agreement with each statement (1 = Strongly Disagree, 7 = Strongly Agree)</p>
+
+<form id="consumerForm">
+
+  <!-- Innovator-related items -->
+  <div class="question">
+    <label>1. I like to experiment with new products before most people.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="Innovator">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+  <div class="question">
+    <label>2. I actively seek out information about new products and technologies.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="Innovator">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+
+  <!-- Early Adopter items -->
+  <div class="question">
+    <label>3. I often adopt new products soon after the first users.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="EarlyAdopter">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+  <div class="question">
+    <label>4. I rely on product reviews and expert opinions before trying new products.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="EarlyAdopter">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+
+  <!-- Early Majority items -->
+  <div class="question">
+    <label>5. I prefer to buy products after seeing that they are proven and popular.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="EarlyMajority">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+  <div class="question">
+    <label>6. I usually wait until a product has been widely adopted before buying it.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="EarlyMajority">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+
+  <!-- Late Majority items -->
+  <div class="question">
+    <label>7. I adopt new products only after most people have tried them.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="LateMajority">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+  <div class="question">
+    <label>8. I feel cautious about buying new products.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="LateMajority">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+
+  <!-- Laggard items -->
+  <div class="question">
+    <label>9. I stick to traditional products and avoid new technology unless necessary.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="Laggard">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+  <div class="question">
+    <label>10. I generally resist changes in products or services I am used to.</label>
+    <input type="range" min="1" max="7" value="4" step="1" data-type="Laggard">
+    <div class="scale-labels"><span>1</span><span>7</span></div>
+  </div>
+
+  <button type="button" onclick="calculateConsumerType()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+const consumerFeatures = {
+  Innovator: {
+    features: "Adventurous, risk-taking, enjoys experimenting with new products.",
+    importance: "High — they help create early buzz and influence other consumers.",
+    strategies: "Offer early access, limited editions, beta testing, and exclusive previews."
+  },
+  EarlyAdopter: {
+    features: "Trend-conscious, values expert opinions, adopts early but carefully.",
+    importance: "High — they help drive initial market acceptance and trendsetting.",
+    strategies: "Highlight expert reviews, social proof, and showcase product benefits clearly."
+  },
+  EarlyMajority: {
+    features: "Pragmatic, waits until products are proven, values reliability.",
+    importance: "Medium — they form the bulk of mainstream market.",
+    strategies: "Emphasize reliability, user testimonials, promotions, and wide availability."
+  },
+  LateMajority: {
+    features: "Skeptical, risk-averse, adopts only after seeing widespread use.",
+    importance: "Medium — large segment but requires convincing.",
+    strategies: "Offer guarantees, discounts, and stress safety and low-risk benefits."
+  },
+  Laggard: {
+    features: "Traditional, resistant to change, prefers established solutions.",
+    importance: "Low — minimal influence, but may sustain legacy products.",
+    strategies: "Focus on affordability, simplicity, and compatibility with existing products."
+  }
+};
+
+function calculateConsumerType() {
+  const inputs = document.querySelectorAll('#consumerForm input[type=range]');
+  const scores = {
+    Innovator: 0,
+    EarlyAdopter: 0,
+    EarlyMajority: 0,
+    LateMajority: 0,
+    Laggard: 0
+  };
+  inputs.forEach(input => {
+    const type = input.dataset.type;
+    scores[type] += parseInt(input.value);
+  });
+
+  // Determine the highest scoring type
+  let maxScore = -Infinity;
+  let consumerType = '';
+  for(const type in scores){
+    if(scores[type] > maxScore){
+      maxScore = scores[type];
+      consumerType = type;
+    }
+  }
+
+  const info = consumerFeatures[consumerType];
+  document.getElementById('result').innerHTML = `
+    <div><strong>Your consumer type is: ${consumerType}</strong></div>
+    <div class="feature-section">
+      <h3>Typical Features:</h3>
+      <p>${info.features}</p>
+    </div>
+    <div class="feature-section">
+      <h3>Importance to Businesses:</h3>
+      <p>${info.importance}</p>
+    </div>
+    <div class="feature-section">
+      <h3>Business Strategies to Attract Them:</h3>
+      <p>${info.strategies}</p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
