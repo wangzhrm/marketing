@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apple Product Mix — Diagram</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#ffffff;color:#000000}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:6px 0 18px;color:#333}
+
+    .tree{background:#f8f9fa;border-radius:12px;padding:20px;box-shadow:0 6px 30px rgba(0,0,0,0.1)}
+    .tree ul{padding-left:22px;position:relative;list-style:none;margin:8px 0}
+    .tree ul::before{content:'';position:absolute;left:8px;top:0;width:1px;height:100%;background:#ccc}
+    .tree li{margin:8px 0;padding-left:28px;position:relative}
+    .tree li::before{content:'';position:absolute;left:8px;top:12px;width:18px;height:1px;background:#ccc}
+
+    .node{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;background:#e9ecef;cursor:pointer;user-select:none}
+    .node .dot{width:12px;height:12px;border-radius:50%;background:#007bff}
+    .node .title{font-weight:600}
+    .node .meta{font-size:12px;color:#666;margin-left:8px}
+
+    .collapsed > ul{display:none}
+    .controls{display:flex;gap:8px;margin-left:auto}
+    button.btn{background:#007bff;color:#fff;padding:6px 10px;border:none;border-radius:8px;cursor:pointer}
+    button.btn:hover{background:#0056b3}
+    .legend{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .legend .item{display:flex;align-items:center;gap:8px;font-size:13px;color:#333}
+    .legend .sw{width:12px;height:12px;border-radius:3px;background:#007bff}
+
+    footer{margin-top:14px;color:#555;font-size:13px}
+
+    @media (max-width:720px){.wrap{padding:12px}header{flex-direction:column;align-items:flex-start}.controls{margin-left:0}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Apple Product Mix — Visual Diagram</h1>
+        <p class="lead">Click any node to expand/collapse. The top-level branches are product lines (breadth). Items under each branch show product line depth (variations).</p>
+      </div>
+      <div class="controls">
+        <button id="expandAll" class="btn">Expand all</button>
+        <button id="collapseAll" class="btn">Collapse all</button>
+      </div>
+    </header>
+
+    <div class="tree" id="productTree">
+      <ul>
+        <li>
+          <div class="node" data-role="root"><span class="dot"></span><span class="title">Apple Product Mix</span><span class="meta">(Product Mix)</span></div>
+          <ul>
+            <li>
+              <div class="node" data-role="line"><span class="dot"></span><span class="title">iPhone</span><span class="meta">(Depth: 5+)</span></div>
+              <ul>
+                <li><div class="node"><span class="dot"></span><span class="title">iPhone 15</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPhone 15 Plus</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPhone 15 Pro</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPhone 15 Pro Max</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPhone SE</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" data-role="line"><span class="dot"></span><span class="title">iPad</span><span class="meta">(Depth: 4)</span></div>
+              <ul>
+                <li><div class="node"><span class="dot"></span><span class="title">iPad (standard)</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPad mini</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPad Air</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iPad Pro</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" data-role="line"><span class="dot"></span><span class="title">Mac</span><span class="meta">(Depth: 6)</span></div>
+              <ul>
+                <li><div class="node"><span class="dot"></span><span class="title">MacBook Air</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">MacBook Pro (13")</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">MacBook Pro (14/16")</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">iMac</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Mac mini</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Mac Studio</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" data-role="line"><span class="dot"></span><span class="title">Apple Watch</span><span class="meta">(Depth: 3)</span></div>
+              <ul>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple Watch Series</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple Watch SE</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple Watch Ultra</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" data-role="line"><span class="dot"></span><span class="title">AirPods</span><span class="meta">(Depth: 3)</span></div>
+              <ul>
+                <li><div class="node"><span class="dot"></span><span class="title">AirPods</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">AirPods Pro</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">AirPods Max</span></div></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="node" data-role="line"><span class="dot"></span><span class="title">Services</span><span class="meta">(Depth: 5+)</span></div>
+              <ul>
+                <li><div class="node"><span class="dot"></span><span class="title">iCloud</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple Music</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple TV+</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple Arcade</span></div></li>
+                <li><div class="node"><span class="dot"></span><span class="title">Apple Fitness+</span></div></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="legend">
+      <div class="item"><span class="sw"></span>Product mix breadth = number of product lines (here: iPhone, iPad, Mac, Watch, AirPods, Services)</div>
+      <div class="item">Depth = number of variations within a product line (shown beside each line)</div>
+    </div>
+
+    <footer>Tip: Use <strong>Expand all</strong> and <strong>Collapse all</strong> to quickly view breadth vs depth.</footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.tree .node').forEach(node => {
+      node.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const li = node.closest('li');
+        if(!li) return;
+        li.classList.toggle('collapsed');
+      });
+    });
+
+    document.getElementById('expandAll').addEventListener('click', ()=>{
+      document.querySelectorAll('#productTree li').forEach(li=>li.classList.remove('collapsed'));
+    });
+    document.getElementById('collapseAll').addEventListener('click', ()=>{
+      document.querySelectorAll('#productTree li').forEach(li=>li.classList.add('collapsed'));
+    });
+
+    document.querySelectorAll('#productTree ul ul').forEach(ul=>{ ul.parentElement.classList.add('collapsed') });
+  </script>
+</body>
+</html>
