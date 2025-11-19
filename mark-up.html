@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Markup Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        #game-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 1000px;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .column {
+            width: 45%;
+            min-height: 400px;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        #categories {
+            background-color: #e6f7ff; /* Light blue */
+            border: 2px solid #a0d9ff;
+        }
+
+        #markups {
+            background-color: #fff0e6; /* Light orange */
+            border: 2px solid #ffb880;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .item, .drop-target {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            cursor: grab;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .item:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .drop-target {
+            min-height: 45px;
+            background-color: #f9f9f9;
+            border: 2px dashed #a0a0a0;
+            cursor: default;
+            color: #666;
+            text-align: center;
+            line-height: 45px;
+            font-style: italic;
+        }
+
+        .drop-target.hover {
+            background-color: #e0ffe0; /* Green tint on hover */
+            border-color: #00cc00;
+        }
+
+        .matched {
+            background-color: #d4edda; /* Light green for matched */
+            border-color: #c3e6cb;
+            color: #155724;
+            cursor: default !important;
+        }
+        
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            display: none; /* Initially hidden */
+        }
+        
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+
+        .final-answer {
+            background-color: #fff;
+            border: 1px solid #4CAF50;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: left;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Retail Markup Matching Practice</h1>
+    <p>Drag the correct percentage markup from the right column to its matching product category on the left.</p>
+
+    <div id="game-container">
+        
+        <div id="categories" class="column">
+            <h2>Product Categories</h2>
+            <div class="category-item" data-category="A">Eyeglasses/Designer Frames <div class="drop-target" data-match="A">Drop Markup Here</div></div>
+            <div class="category-item" data-category="B">Restaurant Food (Average) <div class="drop-target" data-match="B">Drop Markup Here</div></div>
+            <div class="category-item" data-category="C">Apparel/Clothing <div class="drop-target" data-match="C">Drop Markup Here</div></div>
+            <div class="category-item" data-category="D">Consumer Electronics <div class="drop-target" data-match="D">Drop Markup Here</div></div>
+            <div class="category-item" data-category="E">Grocery Staples <div class="drop-target" data-match="E">Drop Markup Here</div></div>
+        </div>
+
+        <div id="markups" class="column">
+            <h2>Markup Percentages</h2>
+            <div class="item" draggable="true" data-markup="A">800% – 1,000%+</div>
+            <div class="item" draggable="true" data-markup="B">200% – 400%</div>
+            <div class="item" draggable="true" data-markup="C">100% – 350%</div>
+            <div class="item" draggable="true" data-markup="D">8% – 20%</div>
+            <div class="item" draggable="true" data-markup="E">5% – 25%</div>
+        </div>
+        
+    </div>
+
+    <div id="results">
+        <h2>Results:</h2>
+        <div id="feedback"></div>
+        <div id="final-answers"></div>
+    </div>
+
+    <script>
+        const categories = document.getElementById('categories');
+        const markups = document.getElementById('markups');
+        const dropTargets = document.querySelectorAll('.drop-target');
+        const resultsDiv = document.getElementById('results');
+        const feedbackDiv = document.getElementById('feedback');
+        const finalAnswersDiv = document.getElementById('final-answers');
+        let dragItem = null;
+        let correctMatches = 0;
+        const totalMatches = 5;
+
+        // --- Drag Functionality ---
+
+        markups.addEventListener('dragstart', (e) => {
+            if (e.target.classList.contains('item')) {
+                dragItem = e.target;
+                // Store the original markup category key (A, B, C, etc.)
+                e.dataTransfer.setData('text/plain', dragItem.dataset.markup);
+                setTimeout(() => dragItem.style.display = "none", 0);
+            }
+        });
+
+        markups.addEventListener('dragend', () => {
+            if (dragItem) {
+                dragItem.style.display = "block";
+                dragItem = null;
+            }
+        });
+
+        // --- Drop Functionality ---
+
+        dropTargets.forEach(target => {
+            target.addEventListener('dragover', (e) => {
+                e.preventDefault(); // Allows drop
+                if (!target.classList.contains('matched')) {
+                    target.classList.add('hover');
+                }
+            });
+
+            target.addEventListener('dragleave', () => {
+                target.classList.remove('hover');
+            });
+
+            target.addEventListener('drop', (e) => {
+                e.preventDefault();
+                target.classList.remove('hover');
+
+                if (target.classList.contains('matched')) return; // Prevent dropping on matched target
+
+                const markupKey = e.dataTransfer.getData('text/plain');
+                const categoryKey = target.dataset.match;
+
+                // Check for a correct match
+                if (markupKey === categoryKey) {
+                    target.innerHTML = dragItem.textContent; // Move the text to the drop area
+                    target.classList.add('matched');
+                    dragItem.remove(); // Remove the item from the source column
+                    correctMatches++;
+                    checkCompletion();
+                } else {
+                    // Provide visual feedback for an incorrect drop (optional: could shake or briefly flash)
+                    // For now, it just returns the item to its original position
+                    alert("That doesn't look like the right match. Try again!");
+                }
+            });
+        });
+
+        // --- Completion and Results ---
+
+        function checkCompletion() {
+            if (correctMatches === totalMatches) {
+                showResults(true);
+            }
+        }
+
+        function showResults(isCorrect) {
+            resultsDiv.style.display = 'block';
+
+            const matchedCategories = Array.from(categories.querySelectorAll('.category-item'));
+            const matches = matchedCategories.map(item => {
+                const category = item.childNodes[0].textContent.trim();
+                const markup = item.querySelector('.drop-target').textContent;
+                const isFinalCorrect = (item.querySelector('.drop-target').dataset.match === Array.from(markups.querySelectorAll('.item')).find(m => m.textContent === markup)?.dataset.markup) || isCorrect; // Simplified check for final display
+                
+                return { category, markup };
+            });
+
+            if (isCorrect) {
+                feedbackDiv.className = 'correct';
+                feedbackDiv.innerHTML = '✅ **Congratulations! You have successfully matched all the categories correctly!**';
+            } else {
+                feedbackDiv.className = 'incorrect';
+                feedbackDiv.innerHTML = '❌ **Oops! Not all matches are correct. Keep trying!**';
+            }
+
+            finalAnswersDiv.innerHTML = '<h3>Your Correct Matches:</h3>';
+            matches.forEach(match => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'final-answer';
+                itemDiv.textContent = `${match.category}: ${match.markup}`;
+                finalAnswersDiv.appendChild(itemDiv);
+            });
+        }
+        
+    </script>
+
+</body>
+</html>
