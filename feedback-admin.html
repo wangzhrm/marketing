@@ -114,7 +114,7 @@
     async function loadStudents() {
       try {
         const query = new AV.Query('Student');
-        query.limit(100);
+        query.limit(1000); // ✅ FIXED: was 100, now 1000
         query.addAscending('createdAt'); // preserve order
         const results = await query.find();
 
